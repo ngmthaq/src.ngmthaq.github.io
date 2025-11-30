@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto p-4">
+  <div class="c-card container mx-auto">
     <div class="mb-4">
       <button
         @click="goBack"

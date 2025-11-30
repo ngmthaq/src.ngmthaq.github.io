@@ -1,12 +1,12 @@
 <template>
-  <div class="container mx-auto max-w-5xl py-8">
+  <div class="c-card container mx-auto py-8">
     <h1 class="mb-4 text-center text-4xl font-bold">Nguyen Manh Thang</h1>
     <p class="mb-16 text-center text-lg">Welcome back! This is the home page of my application</p>
     <div class="flex flex-wrap gap-4">
       <div
         v-for="(item, index) in items"
         :key="index"
-        class="h-32 w-[calc(25%-theme(gap.4)*3/4)] rounded text-center shadow-sm hover:shadow-lg"
+        class="h-40 w-[calc(25%-theme(gap.4)*3/4)] rounded bg-blue-50 text-center shadow-sm hover:shadow-lg"
       >
         <RouterLink
           :to="{ name: item.pathName }"

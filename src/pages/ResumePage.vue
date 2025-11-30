@@ -150,7 +150,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onBeforeMount, ref } from "vue";
+import { onBeforeMount, onMounted, ref } from "vue";
 
 import type { ResumeInfo } from "@/types/resume";
 
@@ -170,5 +170,9 @@ onBeforeMount(() => {
     .catch((error) => {
       console.error("Error fetching info data:", error);
     });
+});
+
+onMounted(() => {
+  document.title = "Nguyen_Manh_Thang (Victor Nguyen) Software Engineer Resume";
 });
 </script>

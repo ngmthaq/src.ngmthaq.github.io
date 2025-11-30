@@ -1,1 +1,13 @@
 export const ResumePage = () => import("./ResumePage.vue");
+export const HomePage = () => import("./HomePage.vue");
+export const TextGeneratorPage = () => import("./TextGeneratorPage.vue");
+export const WordCounterPage = () => import("./WordCounterPage.vue");
+export const OnKeyDownPage = () => import("./OnKeyDownPage.vue");
+export const JavaScriptRegexTestPage = () => import("./JavaScriptRegexTestPage.vue");
+export const JsonViewerPage = () => import("./JsonViewerPage.vue");
+export const TimestampToDatePage = () => import("./TimestampToDatePage.vue");
+export const NpmScriptPage = () => import("./NpmScriptPage.vue");
+export const StringConverterPage = () => import("./StringConverterPage.vue");
+export const MarkdownViewerPage = () => import("./MarkdownViewerPage.vue");
+export const CsvViewerPage = () => import("./CsvViewerPage.vue");
+export const MetaGeneratorPage = () => import("./MetaGeneratorPage.vue");

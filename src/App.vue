@@ -6,8 +6,4 @@
 
 <style>
 @import "tailwindcss";
-
-.container {
-  @apply mx-auto;
-}
 </style>

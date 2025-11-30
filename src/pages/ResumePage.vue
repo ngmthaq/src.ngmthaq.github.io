@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-5xl py-8" v-show="info">
+  <div class="container mx-auto max-w-5xl py-8" v-show="info">
     <div class="mb-2 flex justify-between border-b py-1">
       <p>{{ info?.jobTitle }}</p>
       <div class="hidden gap-3 md:flex">

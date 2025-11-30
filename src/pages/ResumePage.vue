@@ -10,8 +10,10 @@
         </a>
         <p class="text-sm">&#9900;</p>
         <a :href="`tel:${info?.phone}`" class="text-sm text-blue-700 underline">
-          {{ info?.phone }}</a
-        >
+          {{ info?.phone }}
+        </a>
+        <p class="text-sm">&#9900;</p>
+        <p class="cursor-pointer text-sm text-blue-700 underline" @click="handleExport">Export</p>
       </div>
     </div>
     <div class="pb-6">
@@ -155,6 +157,10 @@ import { onBeforeMount, onMounted, ref } from "vue";
 import type { ResumeInfo } from "@/types/resume";
 
 const info = ref<ResumeInfo | null>(null);
+
+function handleExport() {
+  window.print();
+}
 
 onBeforeMount(() => {
   console.log("Fetching info data..");

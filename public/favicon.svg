@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Steam -->
+  <path d="M28 8 Q26 12 28 16" stroke="#8B7355" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M36 6 Q34 10 36 14" stroke="#8B7355" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M32 10 Q30 14 32 18" stroke="#8B7355" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+  
+  <!-- Cup body -->
+  <path d="M18 24 L20 48 Q20 52 24 52 L40 52 Q44 52 44 48 L46 24 Z" fill="#6F4E37" stroke="#4A3426" stroke-width="2"/>
+  
+  <!-- Coffee surface -->
+  <ellipse cx="32" cy="24" rx="14" ry="4" fill="#3E2723"/>
+  
+  <!-- Cup highlight -->
+  <path d="M22 28 Q24 26 26 28 L27 44" stroke="#8B6F47" stroke-width="1.5" fill="none" opacity="0.4" stroke-linecap="round"/>
+  
+  <!-- Handle -->
+  <path d="M46 28 Q54 28 54 36 Q54 44 46 44" stroke="#4A3426" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M47 30 Q52 30 52 36 Q52 42 47 42" stroke="#6F4E37" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Saucer -->
+  <ellipse cx="32" cy="54" rx="18" ry="3" fill="#8B7355" stroke="#6F5B45" stroke-width="1.5"/>
+</svg>

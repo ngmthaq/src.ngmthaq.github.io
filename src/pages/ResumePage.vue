@@ -48,6 +48,25 @@
       </table>
     </div>
     <div class="pb-6">
+      <p class="mb-2 border-b-2 font-bold uppercase">Awards and Certificates</p>
+      <table class="w-full border-collapse border">
+        <thead>
+          <tr>
+            <td class="w-[50%] border-collapse border p-1 font-semibold">Title</td>
+            <td class="w-[30%] border-collapse border p-1 font-semibold">Issuer</td>
+            <td class="w-[20%] border-collapse border p-1 font-semibold">Date</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(award, index) in info?.awardsAndcertificates" :key="index">
+            <td class="border-collapse border p-1">{{ award.title }}</td>
+            <td class="border-collapse border p-1">{{ award.issuer }}</td>
+            <td class="border-collapse border p-1">{{ award.date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pb-6">
       <p class="mb-2 border-b-2 font-bold uppercase">Education</p>
       <table class="w-full border-collapse border">
         <thead>
@@ -72,25 +91,6 @@
                 </li>
               </ul>
             </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="pb-6">
-      <p class="mb-2 border-b-2 font-bold uppercase">Awards and Certificates</p>
-      <table class="w-full border-collapse border">
-        <thead>
-          <tr>
-            <td class="w-[50%] border-collapse border p-1 font-semibold">Title</td>
-            <td class="w-[30%] border-collapse border p-1 font-semibold">Issuer</td>
-            <td class="w-[20%] border-collapse border p-1 font-semibold">Date</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(award, index) in info?.awardsAndcertificates" :key="index">
-            <td class="border-collapse border p-1">{{ award.title }}</td>
-            <td class="border-collapse border p-1">{{ award.issuer }}</td>
-            <td class="border-collapse border p-1">{{ award.date }}</td>
           </tr>
         </tbody>
       </table>

@@ -18,14 +18,19 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "@tanstack/react-router": "^1.141.6",
+    "@uiw/react-markdown-preview": "^5.1.5",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
+    "diff": "^8.0.2",
     "react": "^19.2.0",
     "react-bootstrap": "^2.10.10",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-json-view": "^1.21.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@tanstack/router-plugin": "^1.141.7",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",

@@ -58,7 +58,7 @@ function RouteComponent() {
   ];
 
   return (
-    <Container fluid='sm' className='py-4'>
+    <Container fluid='xl' className='py-4'>
       <Row className='mb-3'>
         <Col>
           <Link to='/' className='btn btn-secondary'>

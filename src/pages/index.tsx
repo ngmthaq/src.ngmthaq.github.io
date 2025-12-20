@@ -38,6 +38,7 @@ function RouteComponent() {
     { name: 'String Converter', path: '/string-converter', icon: '🔤' },
     { name: 'JSON Viewer', path: '/json-viewer', icon: '📋' },
     { name: 'Markdown Viewer', path: '/markdown-viewer', icon: '📝' },
+    { name: 'Mermaid Viewer', path: '/mermaid-viewer', icon: '🧩' },
     { name: 'CSV Viewer', path: '/csv-viewer', icon: '📊' },
     { name: 'JWT Decoder', path: '/jwt-decoder', icon: '🔐' },
     { name: 'Text Diff Viewer', path: '/text-diff-viewer', icon: '🔄' },
@@ -49,7 +50,7 @@ function RouteComponent() {
 
   return (
     <>
-      <Container fluid='sm' className='py-8'>
+      <Container fluid='xl' className='py-8'>
         <h1 className='my-4 text-center display-4 fw-bold'>Nguyen Manh Thang</h1>
         <p className='my-4 text-center lead'>
           Welcome back! This is the home page of my application
@@ -58,13 +59,25 @@ function RouteComponent() {
           {items.map((item, index) => (
             <Col key={index} xs={12} sm={6} md={4} lg={3} className='mb-4'>
               <Card className='h-100 shadow-sm'>
-                <Link
-                  to={item.path}
-                  className='text-decoration-none h-100 d-flex flex-column align-items-center justify-content-center p-4 text-dark'
-                >
-                  <div className='mb-2 display-6'>{item.icon}</div>
-                  <div className='text-center'>{item.name}</div>
-                </Link>
+                {item.path === '/resume' ? (
+                  <a
+                    href={'/#' + item.path}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-decoration-none h-100 d-flex flex-column align-items-center justify-content-center p-4 text-dark'
+                  >
+                    <div className='mb-2 display-6'>{item.icon}</div>
+                    <div className='text-center'>{item.name}</div>
+                  </a>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className='text-decoration-none h-100 d-flex flex-column align-items-center justify-content-center p-4 text-dark'
+                  >
+                    <div className='mb-2 display-6'>{item.icon}</div>
+                    <div className='text-center'>{item.name}</div>
+                  </Link>
+                )}
               </Card>
             </Col>
           ))}

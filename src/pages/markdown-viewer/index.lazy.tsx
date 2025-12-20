@@ -13,7 +13,7 @@ function RouteComponent() {
   // Render markdown using @uiw/react-markdown-preview
 
   return (
-    <Container fluid='sm' className='py-4'>
+    <Container fluid='xl' className='py-4'>
       <Row className='mb-3'>
         <Col>
           <Link to='/' className='btn btn-secondary'>
@@ -54,12 +54,16 @@ function RouteComponent() {
                   overflow: 'auto',
                 }}
               >
-                <MarkdownPreview
-                  source={markdown || ''}
-                  wrapperElement={{
-                    'data-color-mode': 'light',
-                  }}
-                />
+                {markdown ? (
+                  <MarkdownPreview
+                    source={markdown}
+                    wrapperElement={{
+                      'data-color-mode': 'light',
+                    }}
+                  />
+                ) : (
+                  <p className='text-muted'>Rendered markdown will appear here...</p>
+                )}
               </div>
             </Card.Body>
           </Card>

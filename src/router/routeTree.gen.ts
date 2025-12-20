@@ -35,6 +35,7 @@ const NpmScriptIndexLazyRouteImport = createFileRoute('/npm-script/')()
 const MinifyPrettifyIndexLazyRouteImport =
   createFileRoute('/minify-prettify/')()
 const MetaGeneratorIndexLazyRouteImport = createFileRoute('/meta-generator/')()
+const MermaidViewerIndexLazyRouteImport = createFileRoute('/mermaid-viewer/')()
 const MarkdownViewerIndexLazyRouteImport =
   createFileRoute('/markdown-viewer/')()
 const JwtDecoderIndexLazyRouteImport = createFileRoute('/jwt-decoder/')()
@@ -148,6 +149,13 @@ const MetaGeneratorIndexLazyRoute = MetaGeneratorIndexLazyRouteImport.update({
 } as any).lazy(() =>
   import('./../pages/meta-generator/index.lazy').then((d) => d.Route),
 )
+const MermaidViewerIndexLazyRoute = MermaidViewerIndexLazyRouteImport.update({
+  id: '/mermaid-viewer/',
+  path: '/mermaid-viewer/',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() =>
+  import('./../pages/mermaid-viewer/index.lazy').then((d) => d.Route),
+)
 const MarkdownViewerIndexLazyRoute = MarkdownViewerIndexLazyRouteImport.update({
   id: '/markdown-viewer/',
   path: '/markdown-viewer/',
@@ -208,6 +216,7 @@ export interface FileRoutesByFullPath {
   '/json-viewer': typeof JsonViewerIndexLazyRoute
   '/jwt-decoder': typeof JwtDecoderIndexLazyRoute
   '/markdown-viewer': typeof MarkdownViewerIndexLazyRoute
+  '/mermaid-viewer': typeof MermaidViewerIndexLazyRoute
   '/meta-generator': typeof MetaGeneratorIndexLazyRoute
   '/minify-prettify': typeof MinifyPrettifyIndexLazyRoute
   '/npm-script': typeof NpmScriptIndexLazyRoute
@@ -231,6 +240,7 @@ export interface FileRoutesByTo {
   '/json-viewer': typeof JsonViewerIndexLazyRoute
   '/jwt-decoder': typeof JwtDecoderIndexLazyRoute
   '/markdown-viewer': typeof MarkdownViewerIndexLazyRoute
+  '/mermaid-viewer': typeof MermaidViewerIndexLazyRoute
   '/meta-generator': typeof MetaGeneratorIndexLazyRoute
   '/minify-prettify': typeof MinifyPrettifyIndexLazyRoute
   '/npm-script': typeof NpmScriptIndexLazyRoute
@@ -255,6 +265,7 @@ export interface FileRoutesById {
   '/json-viewer/': typeof JsonViewerIndexLazyRoute
   '/jwt-decoder/': typeof JwtDecoderIndexLazyRoute
   '/markdown-viewer/': typeof MarkdownViewerIndexLazyRoute
+  '/mermaid-viewer/': typeof MermaidViewerIndexLazyRoute
   '/meta-generator/': typeof MetaGeneratorIndexLazyRoute
   '/minify-prettify/': typeof MinifyPrettifyIndexLazyRoute
   '/npm-script/': typeof NpmScriptIndexLazyRoute
@@ -280,6 +291,7 @@ export interface FileRouteTypes {
     | '/json-viewer'
     | '/jwt-decoder'
     | '/markdown-viewer'
+    | '/mermaid-viewer'
     | '/meta-generator'
     | '/minify-prettify'
     | '/npm-script'
@@ -303,6 +315,7 @@ export interface FileRouteTypes {
     | '/json-viewer'
     | '/jwt-decoder'
     | '/markdown-viewer'
+    | '/mermaid-viewer'
     | '/meta-generator'
     | '/minify-prettify'
     | '/npm-script'
@@ -326,6 +339,7 @@ export interface FileRouteTypes {
     | '/json-viewer/'
     | '/jwt-decoder/'
     | '/markdown-viewer/'
+    | '/mermaid-viewer/'
     | '/meta-generator/'
     | '/minify-prettify/'
     | '/npm-script/'
@@ -350,6 +364,7 @@ export interface RootRouteChildren {
   JsonViewerIndexLazyRoute: typeof JsonViewerIndexLazyRoute
   JwtDecoderIndexLazyRoute: typeof JwtDecoderIndexLazyRoute
   MarkdownViewerIndexLazyRoute: typeof MarkdownViewerIndexLazyRoute
+  MermaidViewerIndexLazyRoute: typeof MermaidViewerIndexLazyRoute
   MetaGeneratorIndexLazyRoute: typeof MetaGeneratorIndexLazyRoute
   MinifyPrettifyIndexLazyRoute: typeof MinifyPrettifyIndexLazyRoute
   NpmScriptIndexLazyRoute: typeof NpmScriptIndexLazyRoute
@@ -465,6 +480,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MetaGeneratorIndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mermaid-viewer/': {
+      id: '/mermaid-viewer/'
+      path: '/mermaid-viewer'
+      fullPath: '/mermaid-viewer'
+      preLoaderRoute: typeof MermaidViewerIndexLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/markdown-viewer/': {
       id: '/markdown-viewer/'
       path: '/markdown-viewer'
@@ -526,6 +548,7 @@ const rootRouteChildren: RootRouteChildren = {
   JsonViewerIndexLazyRoute: JsonViewerIndexLazyRoute,
   JwtDecoderIndexLazyRoute: JwtDecoderIndexLazyRoute,
   MarkdownViewerIndexLazyRoute: MarkdownViewerIndexLazyRoute,
+  MermaidViewerIndexLazyRoute: MermaidViewerIndexLazyRoute,
   MetaGeneratorIndexLazyRoute: MetaGeneratorIndexLazyRoute,
   MinifyPrettifyIndexLazyRoute: MinifyPrettifyIndexLazyRoute,
   NpmScriptIndexLazyRoute: NpmScriptIndexLazyRoute,

@@ -86,7 +86,7 @@ function RouteComponent() {
   }
 
   return (
-    <Container fluid='sm' className='mx-auto py-4 px-4' style={{ maxWidth: '72rem' }}>
+    <Container fluid='xl' className='mx-auto py-4 px-4' style={{ maxWidth: '72rem' }}>
       <div className='mb-2 d-flex justify-content-between border-bottom py-1'>
         <p>{info.jobTitle}</p>
         <div className='d-none d-md-flex gap-3'>

@@ -32,6 +32,9 @@ const QueryParamsParserIndexLazyRouteImport = createFileRoute(
 )()
 const OnKeyDownIndexLazyRouteImport = createFileRoute('/on-key-down/')()
 const NpmScriptIndexLazyRouteImport = createFileRoute('/npm-script/')()
+const MockDataGeneratorIndexLazyRouteImport = createFileRoute(
+  '/mock-data-generator/',
+)()
 const MinifyPrettifyIndexLazyRouteImport =
   createFileRoute('/minify-prettify/')()
 const MetaGeneratorIndexLazyRouteImport = createFileRoute('/meta-generator/')()
@@ -140,6 +143,14 @@ const NpmScriptIndexLazyRoute = NpmScriptIndexLazyRouteImport.update({
 } as any).lazy(() =>
   import('./../pages/npm-script/index.lazy').then((d) => d.Route),
 )
+const MockDataGeneratorIndexLazyRoute =
+  MockDataGeneratorIndexLazyRouteImport.update({
+    id: '/mock-data-generator/',
+    path: '/mock-data-generator/',
+    getParentRoute: () => rootRouteImport,
+  } as any).lazy(() =>
+    import('./../pages/mock-data-generator/index.lazy').then((d) => d.Route),
+  )
 const MinifyPrettifyIndexLazyRoute = MinifyPrettifyIndexLazyRouteImport.update({
   id: '/minify-prettify/',
   path: '/minify-prettify/',
@@ -247,6 +258,7 @@ export interface FileRoutesByFullPath {
   '/mermaid-viewer': typeof MermaidViewerIndexLazyRoute
   '/meta-generator': typeof MetaGeneratorIndexLazyRoute
   '/minify-prettify': typeof MinifyPrettifyIndexLazyRoute
+  '/mock-data-generator': typeof MockDataGeneratorIndexLazyRoute
   '/npm-script': typeof NpmScriptIndexLazyRoute
   '/on-key-down': typeof OnKeyDownIndexLazyRoute
   '/query-params-parser': typeof QueryParamsParserIndexLazyRoute
@@ -274,6 +286,7 @@ export interface FileRoutesByTo {
   '/mermaid-viewer': typeof MermaidViewerIndexLazyRoute
   '/meta-generator': typeof MetaGeneratorIndexLazyRoute
   '/minify-prettify': typeof MinifyPrettifyIndexLazyRoute
+  '/mock-data-generator': typeof MockDataGeneratorIndexLazyRoute
   '/npm-script': typeof NpmScriptIndexLazyRoute
   '/on-key-down': typeof OnKeyDownIndexLazyRoute
   '/query-params-parser': typeof QueryParamsParserIndexLazyRoute
@@ -302,6 +315,7 @@ export interface FileRoutesById {
   '/mermaid-viewer/': typeof MermaidViewerIndexLazyRoute
   '/meta-generator/': typeof MetaGeneratorIndexLazyRoute
   '/minify-prettify/': typeof MinifyPrettifyIndexLazyRoute
+  '/mock-data-generator/': typeof MockDataGeneratorIndexLazyRoute
   '/npm-script/': typeof NpmScriptIndexLazyRoute
   '/on-key-down/': typeof OnKeyDownIndexLazyRoute
   '/query-params-parser/': typeof QueryParamsParserIndexLazyRoute
@@ -331,6 +345,7 @@ export interface FileRouteTypes {
     | '/mermaid-viewer'
     | '/meta-generator'
     | '/minify-prettify'
+    | '/mock-data-generator'
     | '/npm-script'
     | '/on-key-down'
     | '/query-params-parser'
@@ -358,6 +373,7 @@ export interface FileRouteTypes {
     | '/mermaid-viewer'
     | '/meta-generator'
     | '/minify-prettify'
+    | '/mock-data-generator'
     | '/npm-script'
     | '/on-key-down'
     | '/query-params-parser'
@@ -385,6 +401,7 @@ export interface FileRouteTypes {
     | '/mermaid-viewer/'
     | '/meta-generator/'
     | '/minify-prettify/'
+    | '/mock-data-generator/'
     | '/npm-script/'
     | '/on-key-down/'
     | '/query-params-parser/'
@@ -413,6 +430,7 @@ export interface RootRouteChildren {
   MermaidViewerIndexLazyRoute: typeof MermaidViewerIndexLazyRoute
   MetaGeneratorIndexLazyRoute: typeof MetaGeneratorIndexLazyRoute
   MinifyPrettifyIndexLazyRoute: typeof MinifyPrettifyIndexLazyRoute
+  MockDataGeneratorIndexLazyRoute: typeof MockDataGeneratorIndexLazyRoute
   NpmScriptIndexLazyRoute: typeof NpmScriptIndexLazyRoute
   OnKeyDownIndexLazyRoute: typeof OnKeyDownIndexLazyRoute
   QueryParamsParserIndexLazyRoute: typeof QueryParamsParserIndexLazyRoute
@@ -510,6 +528,13 @@ declare module '@tanstack/react-router' {
       path: '/npm-script'
       fullPath: '/npm-script'
       preLoaderRoute: typeof NpmScriptIndexLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mock-data-generator/': {
+      id: '/mock-data-generator/'
+      path: '/mock-data-generator'
+      fullPath: '/mock-data-generator'
+      preLoaderRoute: typeof MockDataGeneratorIndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/minify-prettify/': {
@@ -621,6 +646,7 @@ const rootRouteChildren: RootRouteChildren = {
   MermaidViewerIndexLazyRoute: MermaidViewerIndexLazyRoute,
   MetaGeneratorIndexLazyRoute: MetaGeneratorIndexLazyRoute,
   MinifyPrettifyIndexLazyRoute: MinifyPrettifyIndexLazyRoute,
+  MockDataGeneratorIndexLazyRoute: MockDataGeneratorIndexLazyRoute,
   NpmScriptIndexLazyRoute: NpmScriptIndexLazyRoute,
   OnKeyDownIndexLazyRoute: OnKeyDownIndexLazyRoute,
   QueryParamsParserIndexLazyRoute: QueryParamsParserIndexLazyRoute,

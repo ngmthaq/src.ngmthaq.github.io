@@ -17,6 +17,7 @@
     ]
   },
   "dependencies": {
+    "@faker-js/faker": "^10.1.0",
     "@popperjs/core": "^2.11.8",
     "@tanstack/react-router": "^1.141.6",
     "@uiw/react-markdown-preview": "^5.1.5",

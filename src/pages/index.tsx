@@ -27,6 +27,7 @@ function RouteComponent() {
   const items: { name: string; path: FileRouteTypes['to']; icon: string }[] = [
     { name: 'My Resume', path: '/resume', icon: '📄' },
     { name: 'Text Generator', path: '/text-generator', icon: '🎲' },
+    { name: 'Mock Data Generator', path: '/mock-data-generator', icon: '🧪' },
     { name: 'Meta Generator', path: '/meta-generator', icon: '🏷️' },
     { name: 'NPM Script Generator', path: '/npm-script', icon: '📦' },
     { name: 'Word Counter', path: '/word-counter', icon: '📊' },

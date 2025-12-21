@@ -43,11 +43,15 @@ const JsonViewerIndexLazyRouteImport = createFileRoute('/json-viewer/')()
 const JavascriptRegexTestIndexLazyRouteImport = createFileRoute(
   '/javascript-regex-test/',
 )()
+const ImageToBase64IndexLazyRouteImport = createFileRoute('/image-to-base64/')()
 const ImageConverterIndexLazyRouteImport =
   createFileRoute('/image-converter/')()
 const CsvViewerIndexLazyRouteImport = createFileRoute('/csv-viewer/')()
 const ColorConverterIndexLazyRouteImport =
   createFileRoute('/color-converter/')()
+const Base64ImagePreviewIndexLazyRouteImport = createFileRoute(
+  '/base64-image-preview/',
+)()
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -185,6 +189,13 @@ const JavascriptRegexTestIndexLazyRoute =
   } as any).lazy(() =>
     import('./../pages/javascript-regex-test/index.lazy').then((d) => d.Route),
   )
+const ImageToBase64IndexLazyRoute = ImageToBase64IndexLazyRouteImport.update({
+  id: '/image-to-base64/',
+  path: '/image-to-base64/',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() =>
+  import('./../pages/image-to-base64/index.lazy').then((d) => d.Route),
+)
 const ImageConverterIndexLazyRoute = ImageConverterIndexLazyRouteImport.update({
   id: '/image-converter/',
   path: '/image-converter/',
@@ -206,12 +217,22 @@ const ColorConverterIndexLazyRoute = ColorConverterIndexLazyRouteImport.update({
 } as any).lazy(() =>
   import('./../pages/color-converter/index.lazy').then((d) => d.Route),
 )
+const Base64ImagePreviewIndexLazyRoute =
+  Base64ImagePreviewIndexLazyRouteImport.update({
+    id: '/base64-image-preview/',
+    path: '/base64-image-preview/',
+    getParentRoute: () => rootRouteImport,
+  } as any).lazy(() =>
+    import('./../pages/base64-image-preview/index.lazy').then((d) => d.Route),
+  )
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/base64-image-preview': typeof Base64ImagePreviewIndexLazyRoute
   '/color-converter': typeof ColorConverterIndexLazyRoute
   '/csv-viewer': typeof CsvViewerIndexLazyRoute
   '/image-converter': typeof ImageConverterIndexLazyRoute
+  '/image-to-base64': typeof ImageToBase64IndexLazyRoute
   '/javascript-regex-test': typeof JavascriptRegexTestIndexLazyRoute
   '/json-viewer': typeof JsonViewerIndexLazyRoute
   '/jwt-decoder': typeof JwtDecoderIndexLazyRoute
@@ -233,9 +254,11 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/base64-image-preview': typeof Base64ImagePreviewIndexLazyRoute
   '/color-converter': typeof ColorConverterIndexLazyRoute
   '/csv-viewer': typeof CsvViewerIndexLazyRoute
   '/image-converter': typeof ImageConverterIndexLazyRoute
+  '/image-to-base64': typeof ImageToBase64IndexLazyRoute
   '/javascript-regex-test': typeof JavascriptRegexTestIndexLazyRoute
   '/json-viewer': typeof JsonViewerIndexLazyRoute
   '/jwt-decoder': typeof JwtDecoderIndexLazyRoute
@@ -258,9 +281,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/base64-image-preview/': typeof Base64ImagePreviewIndexLazyRoute
   '/color-converter/': typeof ColorConverterIndexLazyRoute
   '/csv-viewer/': typeof CsvViewerIndexLazyRoute
   '/image-converter/': typeof ImageConverterIndexLazyRoute
+  '/image-to-base64/': typeof ImageToBase64IndexLazyRoute
   '/javascript-regex-test/': typeof JavascriptRegexTestIndexLazyRoute
   '/json-viewer/': typeof JsonViewerIndexLazyRoute
   '/jwt-decoder/': typeof JwtDecoderIndexLazyRoute
@@ -284,9 +309,11 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/base64-image-preview'
     | '/color-converter'
     | '/csv-viewer'
     | '/image-converter'
+    | '/image-to-base64'
     | '/javascript-regex-test'
     | '/json-viewer'
     | '/jwt-decoder'
@@ -308,9 +335,11 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/base64-image-preview'
     | '/color-converter'
     | '/csv-viewer'
     | '/image-converter'
+    | '/image-to-base64'
     | '/javascript-regex-test'
     | '/json-viewer'
     | '/jwt-decoder'
@@ -332,9 +361,11 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/base64-image-preview/'
     | '/color-converter/'
     | '/csv-viewer/'
     | '/image-converter/'
+    | '/image-to-base64/'
     | '/javascript-regex-test/'
     | '/json-viewer/'
     | '/jwt-decoder/'
@@ -357,9 +388,11 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  Base64ImagePreviewIndexLazyRoute: typeof Base64ImagePreviewIndexLazyRoute
   ColorConverterIndexLazyRoute: typeof ColorConverterIndexLazyRoute
   CsvViewerIndexLazyRoute: typeof CsvViewerIndexLazyRoute
   ImageConverterIndexLazyRoute: typeof ImageConverterIndexLazyRoute
+  ImageToBase64IndexLazyRoute: typeof ImageToBase64IndexLazyRoute
   JavascriptRegexTestIndexLazyRoute: typeof JavascriptRegexTestIndexLazyRoute
   JsonViewerIndexLazyRoute: typeof JsonViewerIndexLazyRoute
   JwtDecoderIndexLazyRoute: typeof JwtDecoderIndexLazyRoute
@@ -515,6 +548,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JavascriptRegexTestIndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/image-to-base64/': {
+      id: '/image-to-base64/'
+      path: '/image-to-base64'
+      fullPath: '/image-to-base64'
+      preLoaderRoute: typeof ImageToBase64IndexLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/image-converter/': {
       id: '/image-converter/'
       path: '/image-converter'
@@ -536,14 +576,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ColorConverterIndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/base64-image-preview/': {
+      id: '/base64-image-preview/'
+      path: '/base64-image-preview'
+      fullPath: '/base64-image-preview'
+      preLoaderRoute: typeof Base64ImagePreviewIndexLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  Base64ImagePreviewIndexLazyRoute: Base64ImagePreviewIndexLazyRoute,
   ColorConverterIndexLazyRoute: ColorConverterIndexLazyRoute,
   CsvViewerIndexLazyRoute: CsvViewerIndexLazyRoute,
   ImageConverterIndexLazyRoute: ImageConverterIndexLazyRoute,
+  ImageToBase64IndexLazyRoute: ImageToBase64IndexLazyRoute,
   JavascriptRegexTestIndexLazyRoute: JavascriptRegexTestIndexLazyRoute,
   JsonViewerIndexLazyRoute: JsonViewerIndexLazyRoute,
   JwtDecoderIndexLazyRoute: JwtDecoderIndexLazyRoute,

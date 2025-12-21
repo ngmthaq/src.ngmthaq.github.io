@@ -36,6 +36,8 @@ interface ResumeInfo {
   phone: string;
   name: string;
   englishName: string;
+  github: string;
+  linkedin: string;
   generalInformations: string[];
   workExperiences: WorkExperience[];
   awardsAndcertificates: Award[];
@@ -244,6 +246,9 @@ function RouteComponent() {
             <strong>English Name:</strong> {info.englishName}
           </li>
           <li>
+            <strong>Gender:</strong> {info.gender}
+          </li>
+          <li>
             <strong>Email:</strong>{' '}
             <a href={`mailto:${info.email}`} className='text-primary text-decoration-underline'>
               {info.email}
@@ -256,7 +261,26 @@ function RouteComponent() {
             </a>
           </li>
           <li>
-            <strong>Gender:</strong> {info.gender}
+            <strong>Github:</strong>{' '}
+            <a
+              href={info.github}
+              className='text-primary text-decoration-underline'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {info.github}
+            </a>
+          </li>
+          <li>
+            <strong>Linkedin:</strong>{' '}
+            <a
+              href={info.linkedin}
+              className='text-primary text-decoration-underline'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {info.linkedin}
+            </a>
           </li>
         </ul>
       </div>

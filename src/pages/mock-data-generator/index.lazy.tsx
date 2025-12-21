@@ -101,10 +101,10 @@ function RouteComponent() {
             </Button>
           </div>
           <Row className='mb-2'>
-            <Col sm={4}>
+            <Col sm={3}>
               <label className='form-label'>Key:</label>
             </Col>
-            <Col sm={8}>
+            <Col sm={9}>
               <input
                 className='form-control'
                 value={field.key}
@@ -114,10 +114,10 @@ function RouteComponent() {
             </Col>
           </Row>
           <Row className='mb-2'>
-            <Col sm={4}>
+            <Col sm={3}>
               <label className='form-label'>Data Type:</label>
             </Col>
-            <Col sm={8}>
+            <Col sm={9}>
               <input
                 className='form-control'
                 value={field.type}
@@ -186,7 +186,7 @@ function RouteComponent() {
   };
 
   return (
-    <Container fluid='xl' className='py-4'>
+    <Container fluid className='py-4'>
       <Row className='mb-3'>
         <Col>
           <Link to='/' className='btn btn-secondary'>
@@ -219,12 +219,12 @@ function RouteComponent() {
               </Row>
               <Row className='mb-3'>
                 <Col sm={6}>
-                  <Button onClick={() => addField()} className='w-100'>
+                  <Button onClick={() => addField()} className='w-100 mb-1'>
                     Add Field
                   </Button>
                 </Col>
                 <Col sm={6}>
-                  <Button onClick={generateJson} className='w-100'>
+                  <Button onClick={generateJson} className='w-100 mb-1'>
                     Generate JSON
                   </Button>
                 </Col>

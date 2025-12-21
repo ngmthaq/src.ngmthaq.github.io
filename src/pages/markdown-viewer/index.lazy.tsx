@@ -13,7 +13,7 @@ function RouteComponent() {
   // Render markdown using @uiw/react-markdown-preview
 
   return (
-    <Container fluid='xl' className='py-4'>
+    <Container fluid className='py-4'>
       <Row className='mb-3'>
         <Col>
           <Link to='/' className='btn btn-secondary'>

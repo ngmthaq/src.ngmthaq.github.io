@@ -238,51 +238,83 @@ function RouteComponent() {
       </div>
       <div>
         <p className='mb-2 border-bottom border-2 fw-bold text-uppercase'>Contact Me</p>
-        <ul className='list-unstyled'>
-          <li>
-            <strong>Name:</strong> {info.name}
-          </li>
-          <li>
-            <strong>English Name:</strong> {info.englishName}
-          </li>
-          <li>
-            <strong>Gender:</strong> {info.gender}
-          </li>
-          <li>
-            <strong>Email:</strong>{' '}
-            <a href={`mailto:${info.email}`} className='text-primary text-decoration-underline'>
-              {info.email}
-            </a>
-          </li>
-          <li>
-            <strong>Phone:</strong>{' '}
-            <a href={`tel:${info.phone}`} className='text-primary text-decoration-underline'>
-              {info.phone}
-            </a>
-          </li>
-          <li>
-            <strong>Github:</strong>{' '}
-            <a
-              href={info.github}
-              className='text-primary text-decoration-underline'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              {info.github}
-            </a>
-          </li>
-          <li>
-            <strong>Linkedin:</strong>{' '}
-            <a
-              href={info.linkedin}
-              className='text-primary text-decoration-underline'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              {info.linkedin}
-            </a>
-          </li>
-        </ul>
+        <div className='table-responsive'>
+          <Table bordered>
+            <tbody>
+              <tr>
+                <td className='w-25'>
+                  <strong>Name</strong>
+                </td>
+                <td className='w-75'>{info.name}</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>English</strong>
+                </td>
+                <td>{info.englishName}</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Gender</strong>
+                </td>
+                <td>{info.gender}</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Phone</strong>
+                </td>
+                <td>
+                  <a href={`tel:${info.phone}`} className='text-primary text-decoration-underline'>
+                    {info.phone}
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Email</strong>
+                </td>
+                <td>
+                  <a
+                    href={`mailto:${info.email}`}
+                    className='text-primary text-decoration-underline'
+                  >
+                    {info.email}
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Github</strong>
+                </td>
+                <td>
+                  <a
+                    href={info.github}
+                    className='text-primary text-decoration-underline'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    {info.github}
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>LinkedIn</strong>
+                </td>
+                <td>
+                  <a
+                    href={info.linkedin}
+                    className='text-primary text-decoration-underline'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    {info.linkedin}
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </Table>
+        </div>
       </div>
     </Container>
   );

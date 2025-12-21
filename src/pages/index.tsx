@@ -41,6 +41,7 @@ function RouteComponent() {
     { name: 'Mermaid Viewer', path: '/mermaid-viewer', icon: '📈' },
     { name: 'CSV Viewer', path: '/csv-viewer', icon: '🖥️' },
     { name: 'JWT Decoder', path: '/jwt-decoder', icon: '🔐' },
+    { name: 'MD5', path: '/md5', icon: '🔐' },
     { name: 'Text Diff Viewer', path: '/text-diff-viewer', icon: '🔄' },
     { name: 'Color Converter', path: '/color-converter', icon: '🎨' },
     { name: 'Image Converter', path: '/image-converter', icon: '🖼️' },

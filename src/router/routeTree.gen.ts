@@ -36,6 +36,7 @@ const MinifyPrettifyIndexLazyRouteImport =
   createFileRoute('/minify-prettify/')()
 const MetaGeneratorIndexLazyRouteImport = createFileRoute('/meta-generator/')()
 const MermaidViewerIndexLazyRouteImport = createFileRoute('/mermaid-viewer/')()
+const Md5IndexLazyRouteImport = createFileRoute('/md5/')()
 const MarkdownViewerIndexLazyRouteImport =
   createFileRoute('/markdown-viewer/')()
 const JwtDecoderIndexLazyRouteImport = createFileRoute('/jwt-decoder/')()
@@ -160,6 +161,11 @@ const MermaidViewerIndexLazyRoute = MermaidViewerIndexLazyRouteImport.update({
 } as any).lazy(() =>
   import('./../pages/mermaid-viewer/index.lazy').then((d) => d.Route),
 )
+const Md5IndexLazyRoute = Md5IndexLazyRouteImport.update({
+  id: '/md5/',
+  path: '/md5/',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() => import('./../pages/md5/index.lazy').then((d) => d.Route))
 const MarkdownViewerIndexLazyRoute = MarkdownViewerIndexLazyRouteImport.update({
   id: '/markdown-viewer/',
   path: '/markdown-viewer/',
@@ -237,6 +243,7 @@ export interface FileRoutesByFullPath {
   '/json-viewer': typeof JsonViewerIndexLazyRoute
   '/jwt-decoder': typeof JwtDecoderIndexLazyRoute
   '/markdown-viewer': typeof MarkdownViewerIndexLazyRoute
+  '/md5': typeof Md5IndexLazyRoute
   '/mermaid-viewer': typeof MermaidViewerIndexLazyRoute
   '/meta-generator': typeof MetaGeneratorIndexLazyRoute
   '/minify-prettify': typeof MinifyPrettifyIndexLazyRoute
@@ -263,6 +270,7 @@ export interface FileRoutesByTo {
   '/json-viewer': typeof JsonViewerIndexLazyRoute
   '/jwt-decoder': typeof JwtDecoderIndexLazyRoute
   '/markdown-viewer': typeof MarkdownViewerIndexLazyRoute
+  '/md5': typeof Md5IndexLazyRoute
   '/mermaid-viewer': typeof MermaidViewerIndexLazyRoute
   '/meta-generator': typeof MetaGeneratorIndexLazyRoute
   '/minify-prettify': typeof MinifyPrettifyIndexLazyRoute
@@ -290,6 +298,7 @@ export interface FileRoutesById {
   '/json-viewer/': typeof JsonViewerIndexLazyRoute
   '/jwt-decoder/': typeof JwtDecoderIndexLazyRoute
   '/markdown-viewer/': typeof MarkdownViewerIndexLazyRoute
+  '/md5/': typeof Md5IndexLazyRoute
   '/mermaid-viewer/': typeof MermaidViewerIndexLazyRoute
   '/meta-generator/': typeof MetaGeneratorIndexLazyRoute
   '/minify-prettify/': typeof MinifyPrettifyIndexLazyRoute
@@ -318,6 +327,7 @@ export interface FileRouteTypes {
     | '/json-viewer'
     | '/jwt-decoder'
     | '/markdown-viewer'
+    | '/md5'
     | '/mermaid-viewer'
     | '/meta-generator'
     | '/minify-prettify'
@@ -344,6 +354,7 @@ export interface FileRouteTypes {
     | '/json-viewer'
     | '/jwt-decoder'
     | '/markdown-viewer'
+    | '/md5'
     | '/mermaid-viewer'
     | '/meta-generator'
     | '/minify-prettify'
@@ -370,6 +381,7 @@ export interface FileRouteTypes {
     | '/json-viewer/'
     | '/jwt-decoder/'
     | '/markdown-viewer/'
+    | '/md5/'
     | '/mermaid-viewer/'
     | '/meta-generator/'
     | '/minify-prettify/'
@@ -397,6 +409,7 @@ export interface RootRouteChildren {
   JsonViewerIndexLazyRoute: typeof JsonViewerIndexLazyRoute
   JwtDecoderIndexLazyRoute: typeof JwtDecoderIndexLazyRoute
   MarkdownViewerIndexLazyRoute: typeof MarkdownViewerIndexLazyRoute
+  Md5IndexLazyRoute: typeof Md5IndexLazyRoute
   MermaidViewerIndexLazyRoute: typeof MermaidViewerIndexLazyRoute
   MetaGeneratorIndexLazyRoute: typeof MetaGeneratorIndexLazyRoute
   MinifyPrettifyIndexLazyRoute: typeof MinifyPrettifyIndexLazyRoute
@@ -520,6 +533,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MermaidViewerIndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/md5/': {
+      id: '/md5/'
+      path: '/md5'
+      fullPath: '/md5'
+      preLoaderRoute: typeof Md5IndexLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/markdown-viewer/': {
       id: '/markdown-viewer/'
       path: '/markdown-viewer'
@@ -597,6 +617,7 @@ const rootRouteChildren: RootRouteChildren = {
   JsonViewerIndexLazyRoute: JsonViewerIndexLazyRoute,
   JwtDecoderIndexLazyRoute: JwtDecoderIndexLazyRoute,
   MarkdownViewerIndexLazyRoute: MarkdownViewerIndexLazyRoute,
+  Md5IndexLazyRoute: Md5IndexLazyRoute,
   MermaidViewerIndexLazyRoute: MermaidViewerIndexLazyRoute,
   MetaGeneratorIndexLazyRoute: MetaGeneratorIndexLazyRoute,
   MinifyPrettifyIndexLazyRoute: MinifyPrettifyIndexLazyRoute,

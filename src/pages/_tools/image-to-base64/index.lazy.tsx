@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
 
 import { ToolPageLayout } from '../../../components/ToolPageLayout';
+import { copyToClipboard } from '../../../helpers/copy';
 
 export const Route = createLazyFileRoute('/_tools/image-to-base64/')({
   component: RouteComponent,
@@ -108,7 +109,7 @@ function RouteComponent() {
                       <Button
                         size='sm'
                         variant='outline-secondary'
-                        onClick={() => navigator.clipboard.writeText(dataUrl)}
+                        onClick={() => copyToClipboard(dataUrl)}
                       >
                         <i className='bi bi-clipboard' />
                       </Button>
@@ -122,7 +123,7 @@ function RouteComponent() {
                       <Button
                         size='sm'
                         variant='outline-secondary'
-                        onClick={() => navigator.clipboard.writeText(rawBase64 || '')}
+                        onClick={() => copyToClipboard(rawBase64 || '')}
                       >
                         <i className='bi bi-clipboard' />
                       </Button>

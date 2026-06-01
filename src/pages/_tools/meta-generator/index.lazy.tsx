@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Row, Col, Card, Form, Button } from 'react-bootstrap';
 
 import { ToolPageLayout } from '../../../components/ToolPageLayout';
+import { copyToClipboard } from '../../../helpers/copy';
 
 export const Route = createLazyFileRoute('/_tools/meta-generator/')({
   component: RouteComponent,
@@ -112,7 +113,7 @@ function RouteComponent() {
                 <Button
                   size='sm'
                   variant='outline-secondary'
-                  onClick={() => navigator.clipboard.writeText(generatedMeta)}
+                  onClick={() => copyToClipboard(generatedMeta)}
                 >
                   <i className='bi bi-clipboard' />
                 </Button>

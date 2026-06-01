@@ -3,6 +3,7 @@ import { useState, useMemo } from 'react';
 import { Row, Col, Card, Form, Alert, Button } from 'react-bootstrap';
 
 import { ToolPageLayout } from '../../../components/ToolPageLayout';
+import { copyToClipboard } from '../../../helpers/copy';
 
 export const Route = createLazyFileRoute('/_tools/npm-script/')({
   component: RouteComponent,
@@ -130,7 +131,7 @@ function RouteComponent() {
                       <Button
                         size='sm'
                         variant='outline-secondary'
-                        onClick={() => navigator.clipboard.writeText(commands.npm || '')}
+                        onClick={() => copyToClipboard(commands.npm || '')}
                       >
                         <i className='bi bi-clipboard' />
                       </Button>
@@ -149,7 +150,7 @@ function RouteComponent() {
                       <Button
                         size='sm'
                         variant='outline-secondary'
-                        onClick={() => navigator.clipboard.writeText(commands.devNpm || '')}
+                        onClick={() => copyToClipboard(commands.devNpm || '')}
                       >
                         <i className='bi bi-clipboard' />
                       </Button>
@@ -168,7 +169,7 @@ function RouteComponent() {
                       <Button
                         size='sm'
                         variant='outline-secondary'
-                        onClick={() => navigator.clipboard.writeText(commands.yarn || '')}
+                        onClick={() => copyToClipboard(commands.yarn || '')}
                       >
                         <i className='bi bi-clipboard' />
                       </Button>
@@ -187,7 +188,7 @@ function RouteComponent() {
                       <Button
                         size='sm'
                         variant='outline-secondary'
-                        onClick={() => navigator.clipboard.writeText(commands.devYarn || '')}
+                        onClick={() => copyToClipboard(commands.devYarn || '')}
                       >
                         <i className='bi bi-clipboard' />
                       </Button>
@@ -206,7 +207,7 @@ function RouteComponent() {
                       <Button
                         size='sm'
                         variant='outline-secondary'
-                        onClick={() => navigator.clipboard.writeText(commands.pnpm || '')}
+                        onClick={() => copyToClipboard(commands.pnpm || '')}
                       >
                         <i className='bi bi-clipboard' />
                       </Button>
@@ -225,7 +226,7 @@ function RouteComponent() {
                       <Button
                         size='sm'
                         variant='outline-secondary'
-                        onClick={() => navigator.clipboard.writeText(commands.devPnpm || '')}
+                        onClick={() => copyToClipboard(commands.devPnpm || '')}
                       >
                         <i className='bi bi-clipboard' />
                       </Button>

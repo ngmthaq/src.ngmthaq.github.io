@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Row, Col, Card, Form, Button } from 'react-bootstrap';
 
 import { ToolPageLayout } from '../../../components/ToolPageLayout';
+import { copyToClipboard } from '../../../helpers/copy';
 
 export const Route = createLazyFileRoute('/_tools/color-converter/')({
   component: RouteComponent,
@@ -223,7 +224,7 @@ function RouteComponent() {
                   <Button
                     size='sm'
                     variant='outline-secondary'
-                    onClick={() => navigator.clipboard.writeText(hex)}
+                    onClick={() => copyToClipboard(hex)}
                   >
                     <i className='bi bi-clipboard' />
                   </Button>
@@ -235,9 +236,7 @@ function RouteComponent() {
                   <Button
                     size='sm'
                     variant='outline-secondary'
-                    onClick={() =>
-                      navigator.clipboard.writeText(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`)
-                    }
+                    onClick={() => copyToClipboard(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`)}
                   >
                     <i className='bi bi-clipboard' />
                   </Button>
@@ -249,7 +248,7 @@ function RouteComponent() {
                   <Button
                     size='sm'
                     variant='outline-secondary'
-                    onClick={() => navigator.clipboard.writeText(`${hsl.h}°, ${hsl.s}%, ${hsl.l}%`)}
+                    onClick={() => copyToClipboard(`${hsl.h}°, ${hsl.s}%, ${hsl.l}%`)}
                   >
                     <i className='bi bi-clipboard' />
                   </Button>

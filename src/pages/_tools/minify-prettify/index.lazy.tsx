@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Row, Col, Card, Form, Button, Alert } from 'react-bootstrap';
 
 import { ToolPageLayout } from '../../../components/ToolPageLayout';
+import { copyToClipboard } from '../../../helpers/copy';
 
 export const Route = createLazyFileRoute('/_tools/minify-prettify/')({
   component: RouteComponent,
@@ -92,7 +93,7 @@ function RouteComponent() {
                 <Button
                   size='sm'
                   variant='outline-secondary'
-                  onClick={() => navigator.clipboard.writeText(output)}
+                  onClick={() => copyToClipboard(output)}
                 >
                   <i className='bi bi-clipboard' />
                 </Button>

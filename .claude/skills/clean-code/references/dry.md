@@ -19,7 +19,7 @@ function calculateTax(amount) {
 // Bad — same shape defined in three layers
 type User = { id: string; email: string; role: string }; // API handler
 type UserRecord = { id: string; email: string; role: string }; // DB layer
-const mockUser = { id: "1", email: "a@b.com", role: "admin" }; // tests
+const mockUser = { id: '1', email: 'a@b.com', role: 'admin' }; // tests
 
 // Good — import from one definition
 // types/user.ts

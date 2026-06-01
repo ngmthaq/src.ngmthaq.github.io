@@ -35,7 +35,7 @@ function processOrder(order) {
   if (order) {
     if (order.items) {
       if (order.items.length > 0) {
-        if (order.status !== "cancelled") {
+        if (order.status !== 'cancelled') {
           /* logic */
         }
       }
@@ -46,7 +46,7 @@ function processOrder(order) {
 // Good — guard clauses
 function processOrder(order) {
   if (!order?.items?.length) return;
-  if (order.status === "cancelled") return;
+  if (order.status === 'cancelled') return;
   // logic
 }
 ```

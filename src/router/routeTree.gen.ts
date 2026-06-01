@@ -11,102 +11,90 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRouteImport } from './../pages/__root'
+import { Route as ToolsRouteRouteImport } from './../pages/_tools/route'
 import { Route as IndexRouteImport } from './../pages/index'
 
-const WordCounterIndexLazyRouteImport = createFileRoute('/word-counter/')()
-const UrlEncoderDecoderIndexLazyRouteImport = createFileRoute(
-  '/url-encoder-decoder/',
-)()
-const TimestampToDateIndexLazyRouteImport = createFileRoute(
-  '/timestamp-to-date/',
-)()
-const TextGeneratorIndexLazyRouteImport = createFileRoute('/text-generator/')()
-const TextDiffViewerIndexLazyRouteImport =
-  createFileRoute('/text-diff-viewer/')()
-const StringConverterIndexLazyRouteImport =
-  createFileRoute('/string-converter/')()
 const ResumeIndexLazyRouteImport = createFileRoute('/resume/')()
-const RegexLibraryIndexLazyRouteImport = createFileRoute('/regex-library/')()
-const QueryParamsParserIndexLazyRouteImport = createFileRoute(
-  '/query-params-parser/',
+const ToolsWordCounterIndexLazyRouteImport = createFileRoute(
+  '/_tools/word-counter/',
 )()
-const OnKeyDownIndexLazyRouteImport = createFileRoute('/on-key-down/')()
-const NpmScriptIndexLazyRouteImport = createFileRoute('/npm-script/')()
-const MockDataGeneratorIndexLazyRouteImport = createFileRoute(
-  '/mock-data-generator/',
+const ToolsUrlEncoderDecoderIndexLazyRouteImport = createFileRoute(
+  '/_tools/url-encoder-decoder/',
 )()
-const MinifyPrettifyIndexLazyRouteImport =
-  createFileRoute('/minify-prettify/')()
-const MetaGeneratorIndexLazyRouteImport = createFileRoute('/meta-generator/')()
-const MermaidViewerIndexLazyRouteImport = createFileRoute('/mermaid-viewer/')()
-const Md5IndexLazyRouteImport = createFileRoute('/md5/')()
-const MarkdownViewerIndexLazyRouteImport =
-  createFileRoute('/markdown-viewer/')()
-const JwtDecoderIndexLazyRouteImport = createFileRoute('/jwt-decoder/')()
-const JsonViewerIndexLazyRouteImport = createFileRoute('/json-viewer/')()
-const JavascriptRegexTestIndexLazyRouteImport = createFileRoute(
-  '/javascript-regex-test/',
+const ToolsTimestampToDateIndexLazyRouteImport = createFileRoute(
+  '/_tools/timestamp-to-date/',
 )()
-const ImageToBase64IndexLazyRouteImport = createFileRoute('/image-to-base64/')()
-const ImageConverterIndexLazyRouteImport =
-  createFileRoute('/image-converter/')()
-const CsvViewerIndexLazyRouteImport = createFileRoute('/csv-viewer/')()
-const ColorConverterIndexLazyRouteImport =
-  createFileRoute('/color-converter/')()
-const Base64ImagePreviewIndexLazyRouteImport = createFileRoute(
-  '/base64-image-preview/',
+const ToolsTextGeneratorIndexLazyRouteImport = createFileRoute(
+  '/_tools/text-generator/',
+)()
+const ToolsTextDiffViewerIndexLazyRouteImport = createFileRoute(
+  '/_tools/text-diff-viewer/',
+)()
+const ToolsStringConverterIndexLazyRouteImport = createFileRoute(
+  '/_tools/string-converter/',
+)()
+const ToolsRegexLibraryIndexLazyRouteImport = createFileRoute(
+  '/_tools/regex-library/',
+)()
+const ToolsQueryParamsParserIndexLazyRouteImport = createFileRoute(
+  '/_tools/query-params-parser/',
+)()
+const ToolsOnKeyDownIndexLazyRouteImport = createFileRoute(
+  '/_tools/on-key-down/',
+)()
+const ToolsNpmScriptIndexLazyRouteImport = createFileRoute(
+  '/_tools/npm-script/',
+)()
+const ToolsMockDataGeneratorIndexLazyRouteImport = createFileRoute(
+  '/_tools/mock-data-generator/',
+)()
+const ToolsMinifyPrettifyIndexLazyRouteImport = createFileRoute(
+  '/_tools/minify-prettify/',
+)()
+const ToolsMetaGeneratorIndexLazyRouteImport = createFileRoute(
+  '/_tools/meta-generator/',
+)()
+const ToolsMermaidViewerIndexLazyRouteImport = createFileRoute(
+  '/_tools/mermaid-viewer/',
+)()
+const ToolsMd5IndexLazyRouteImport = createFileRoute('/_tools/md5/')()
+const ToolsMarkdownViewerIndexLazyRouteImport = createFileRoute(
+  '/_tools/markdown-viewer/',
+)()
+const ToolsJwtDecoderIndexLazyRouteImport = createFileRoute(
+  '/_tools/jwt-decoder/',
+)()
+const ToolsJsonViewerIndexLazyRouteImport = createFileRoute(
+  '/_tools/json-viewer/',
+)()
+const ToolsJavascriptRegexTestIndexLazyRouteImport = createFileRoute(
+  '/_tools/javascript-regex-test/',
+)()
+const ToolsImageToBase64IndexLazyRouteImport = createFileRoute(
+  '/_tools/image-to-base64/',
+)()
+const ToolsImageConverterIndexLazyRouteImport = createFileRoute(
+  '/_tools/image-converter/',
+)()
+const ToolsCsvViewerIndexLazyRouteImport = createFileRoute(
+  '/_tools/csv-viewer/',
+)()
+const ToolsColorConverterIndexLazyRouteImport = createFileRoute(
+  '/_tools/color-converter/',
+)()
+const ToolsBase64ImagePreviewIndexLazyRouteImport = createFileRoute(
+  '/_tools/base64-image-preview/',
 )()
 
+const ToolsRouteRoute = ToolsRouteRouteImport.update({
+  id: '/_tools',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WordCounterIndexLazyRoute = WordCounterIndexLazyRouteImport.update({
-  id: '/word-counter/',
-  path: '/word-counter/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/word-counter/index.lazy').then((d) => d.Route),
-)
-const UrlEncoderDecoderIndexLazyRoute =
-  UrlEncoderDecoderIndexLazyRouteImport.update({
-    id: '/url-encoder-decoder/',
-    path: '/url-encoder-decoder/',
-    getParentRoute: () => rootRouteImport,
-  } as any).lazy(() =>
-    import('./../pages/url-encoder-decoder/index.lazy').then((d) => d.Route),
-  )
-const TimestampToDateIndexLazyRoute =
-  TimestampToDateIndexLazyRouteImport.update({
-    id: '/timestamp-to-date/',
-    path: '/timestamp-to-date/',
-    getParentRoute: () => rootRouteImport,
-  } as any).lazy(() =>
-    import('./../pages/timestamp-to-date/index.lazy').then((d) => d.Route),
-  )
-const TextGeneratorIndexLazyRoute = TextGeneratorIndexLazyRouteImport.update({
-  id: '/text-generator/',
-  path: '/text-generator/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/text-generator/index.lazy').then((d) => d.Route),
-)
-const TextDiffViewerIndexLazyRoute = TextDiffViewerIndexLazyRouteImport.update({
-  id: '/text-diff-viewer/',
-  path: '/text-diff-viewer/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/text-diff-viewer/index.lazy').then((d) => d.Route),
-)
-const StringConverterIndexLazyRoute =
-  StringConverterIndexLazyRouteImport.update({
-    id: '/string-converter/',
-    path: '/string-converter/',
-    getParentRoute: () => rootRouteImport,
-  } as any).lazy(() =>
-    import('./../pages/string-converter/index.lazy').then((d) => d.Route),
-  )
 const ResumeIndexLazyRoute = ResumeIndexLazyRouteImport.update({
   id: '/resume/',
   path: '/resume/',
@@ -114,224 +102,302 @@ const ResumeIndexLazyRoute = ResumeIndexLazyRouteImport.update({
 } as any).lazy(() =>
   import('./../pages/resume/index.lazy').then((d) => d.Route),
 )
-const RegexLibraryIndexLazyRoute = RegexLibraryIndexLazyRouteImport.update({
-  id: '/regex-library/',
-  path: '/regex-library/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/regex-library/index.lazy').then((d) => d.Route),
-)
-const QueryParamsParserIndexLazyRoute =
-  QueryParamsParserIndexLazyRouteImport.update({
+const ToolsWordCounterIndexLazyRoute =
+  ToolsWordCounterIndexLazyRouteImport.update({
+    id: '/word-counter/',
+    path: '/word-counter/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/word-counter/index.lazy').then((d) => d.Route),
+  )
+const ToolsUrlEncoderDecoderIndexLazyRoute =
+  ToolsUrlEncoderDecoderIndexLazyRouteImport.update({
+    id: '/url-encoder-decoder/',
+    path: '/url-encoder-decoder/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/url-encoder-decoder/index.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const ToolsTimestampToDateIndexLazyRoute =
+  ToolsTimestampToDateIndexLazyRouteImport.update({
+    id: '/timestamp-to-date/',
+    path: '/timestamp-to-date/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/timestamp-to-date/index.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const ToolsTextGeneratorIndexLazyRoute =
+  ToolsTextGeneratorIndexLazyRouteImport.update({
+    id: '/text-generator/',
+    path: '/text-generator/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/text-generator/index.lazy').then((d) => d.Route),
+  )
+const ToolsTextDiffViewerIndexLazyRoute =
+  ToolsTextDiffViewerIndexLazyRouteImport.update({
+    id: '/text-diff-viewer/',
+    path: '/text-diff-viewer/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/text-diff-viewer/index.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const ToolsStringConverterIndexLazyRoute =
+  ToolsStringConverterIndexLazyRouteImport.update({
+    id: '/string-converter/',
+    path: '/string-converter/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/string-converter/index.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const ToolsRegexLibraryIndexLazyRoute =
+  ToolsRegexLibraryIndexLazyRouteImport.update({
+    id: '/regex-library/',
+    path: '/regex-library/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/regex-library/index.lazy').then((d) => d.Route),
+  )
+const ToolsQueryParamsParserIndexLazyRoute =
+  ToolsQueryParamsParserIndexLazyRouteImport.update({
     id: '/query-params-parser/',
     path: '/query-params-parser/',
-    getParentRoute: () => rootRouteImport,
+    getParentRoute: () => ToolsRouteRoute,
   } as any).lazy(() =>
-    import('./../pages/query-params-parser/index.lazy').then((d) => d.Route),
+    import('./../pages/_tools/query-params-parser/index.lazy').then(
+      (d) => d.Route,
+    ),
   )
-const OnKeyDownIndexLazyRoute = OnKeyDownIndexLazyRouteImport.update({
+const ToolsOnKeyDownIndexLazyRoute = ToolsOnKeyDownIndexLazyRouteImport.update({
   id: '/on-key-down/',
   path: '/on-key-down/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => ToolsRouteRoute,
 } as any).lazy(() =>
-  import('./../pages/on-key-down/index.lazy').then((d) => d.Route),
+  import('./../pages/_tools/on-key-down/index.lazy').then((d) => d.Route),
 )
-const NpmScriptIndexLazyRoute = NpmScriptIndexLazyRouteImport.update({
+const ToolsNpmScriptIndexLazyRoute = ToolsNpmScriptIndexLazyRouteImport.update({
   id: '/npm-script/',
   path: '/npm-script/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => ToolsRouteRoute,
 } as any).lazy(() =>
-  import('./../pages/npm-script/index.lazy').then((d) => d.Route),
+  import('./../pages/_tools/npm-script/index.lazy').then((d) => d.Route),
 )
-const MockDataGeneratorIndexLazyRoute =
-  MockDataGeneratorIndexLazyRouteImport.update({
+const ToolsMockDataGeneratorIndexLazyRoute =
+  ToolsMockDataGeneratorIndexLazyRouteImport.update({
     id: '/mock-data-generator/',
     path: '/mock-data-generator/',
-    getParentRoute: () => rootRouteImport,
+    getParentRoute: () => ToolsRouteRoute,
   } as any).lazy(() =>
-    import('./../pages/mock-data-generator/index.lazy').then((d) => d.Route),
+    import('./../pages/_tools/mock-data-generator/index.lazy').then(
+      (d) => d.Route,
+    ),
   )
-const MinifyPrettifyIndexLazyRoute = MinifyPrettifyIndexLazyRouteImport.update({
-  id: '/minify-prettify/',
-  path: '/minify-prettify/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/minify-prettify/index.lazy').then((d) => d.Route),
-)
-const MetaGeneratorIndexLazyRoute = MetaGeneratorIndexLazyRouteImport.update({
-  id: '/meta-generator/',
-  path: '/meta-generator/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/meta-generator/index.lazy').then((d) => d.Route),
-)
-const MermaidViewerIndexLazyRoute = MermaidViewerIndexLazyRouteImport.update({
-  id: '/mermaid-viewer/',
-  path: '/mermaid-viewer/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/mermaid-viewer/index.lazy').then((d) => d.Route),
-)
-const Md5IndexLazyRoute = Md5IndexLazyRouteImport.update({
+const ToolsMinifyPrettifyIndexLazyRoute =
+  ToolsMinifyPrettifyIndexLazyRouteImport.update({
+    id: '/minify-prettify/',
+    path: '/minify-prettify/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/minify-prettify/index.lazy').then((d) => d.Route),
+  )
+const ToolsMetaGeneratorIndexLazyRoute =
+  ToolsMetaGeneratorIndexLazyRouteImport.update({
+    id: '/meta-generator/',
+    path: '/meta-generator/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/meta-generator/index.lazy').then((d) => d.Route),
+  )
+const ToolsMermaidViewerIndexLazyRoute =
+  ToolsMermaidViewerIndexLazyRouteImport.update({
+    id: '/mermaid-viewer/',
+    path: '/mermaid-viewer/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/mermaid-viewer/index.lazy').then((d) => d.Route),
+  )
+const ToolsMd5IndexLazyRoute = ToolsMd5IndexLazyRouteImport.update({
   id: '/md5/',
   path: '/md5/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() => import('./../pages/md5/index.lazy').then((d) => d.Route))
-const MarkdownViewerIndexLazyRoute = MarkdownViewerIndexLazyRouteImport.update({
-  id: '/markdown-viewer/',
-  path: '/markdown-viewer/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => ToolsRouteRoute,
 } as any).lazy(() =>
-  import('./../pages/markdown-viewer/index.lazy').then((d) => d.Route),
+  import('./../pages/_tools/md5/index.lazy').then((d) => d.Route),
 )
-const JwtDecoderIndexLazyRoute = JwtDecoderIndexLazyRouteImport.update({
-  id: '/jwt-decoder/',
-  path: '/jwt-decoder/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/jwt-decoder/index.lazy').then((d) => d.Route),
-)
-const JsonViewerIndexLazyRoute = JsonViewerIndexLazyRouteImport.update({
-  id: '/json-viewer/',
-  path: '/json-viewer/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/json-viewer/index.lazy').then((d) => d.Route),
-)
-const JavascriptRegexTestIndexLazyRoute =
-  JavascriptRegexTestIndexLazyRouteImport.update({
+const ToolsMarkdownViewerIndexLazyRoute =
+  ToolsMarkdownViewerIndexLazyRouteImport.update({
+    id: '/markdown-viewer/',
+    path: '/markdown-viewer/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/markdown-viewer/index.lazy').then((d) => d.Route),
+  )
+const ToolsJwtDecoderIndexLazyRoute =
+  ToolsJwtDecoderIndexLazyRouteImport.update({
+    id: '/jwt-decoder/',
+    path: '/jwt-decoder/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/jwt-decoder/index.lazy').then((d) => d.Route),
+  )
+const ToolsJsonViewerIndexLazyRoute =
+  ToolsJsonViewerIndexLazyRouteImport.update({
+    id: '/json-viewer/',
+    path: '/json-viewer/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/json-viewer/index.lazy').then((d) => d.Route),
+  )
+const ToolsJavascriptRegexTestIndexLazyRoute =
+  ToolsJavascriptRegexTestIndexLazyRouteImport.update({
     id: '/javascript-regex-test/',
     path: '/javascript-regex-test/',
-    getParentRoute: () => rootRouteImport,
+    getParentRoute: () => ToolsRouteRoute,
   } as any).lazy(() =>
-    import('./../pages/javascript-regex-test/index.lazy').then((d) => d.Route),
+    import('./../pages/_tools/javascript-regex-test/index.lazy').then(
+      (d) => d.Route,
+    ),
   )
-const ImageToBase64IndexLazyRoute = ImageToBase64IndexLazyRouteImport.update({
-  id: '/image-to-base64/',
-  path: '/image-to-base64/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/image-to-base64/index.lazy').then((d) => d.Route),
-)
-const ImageConverterIndexLazyRoute = ImageConverterIndexLazyRouteImport.update({
-  id: '/image-converter/',
-  path: '/image-converter/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/image-converter/index.lazy').then((d) => d.Route),
-)
-const CsvViewerIndexLazyRoute = CsvViewerIndexLazyRouteImport.update({
+const ToolsImageToBase64IndexLazyRoute =
+  ToolsImageToBase64IndexLazyRouteImport.update({
+    id: '/image-to-base64/',
+    path: '/image-to-base64/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/image-to-base64/index.lazy').then((d) => d.Route),
+  )
+const ToolsImageConverterIndexLazyRoute =
+  ToolsImageConverterIndexLazyRouteImport.update({
+    id: '/image-converter/',
+    path: '/image-converter/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/image-converter/index.lazy').then((d) => d.Route),
+  )
+const ToolsCsvViewerIndexLazyRoute = ToolsCsvViewerIndexLazyRouteImport.update({
   id: '/csv-viewer/',
   path: '/csv-viewer/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => ToolsRouteRoute,
 } as any).lazy(() =>
-  import('./../pages/csv-viewer/index.lazy').then((d) => d.Route),
+  import('./../pages/_tools/csv-viewer/index.lazy').then((d) => d.Route),
 )
-const ColorConverterIndexLazyRoute = ColorConverterIndexLazyRouteImport.update({
-  id: '/color-converter/',
-  path: '/color-converter/',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() =>
-  import('./../pages/color-converter/index.lazy').then((d) => d.Route),
-)
-const Base64ImagePreviewIndexLazyRoute =
-  Base64ImagePreviewIndexLazyRouteImport.update({
+const ToolsColorConverterIndexLazyRoute =
+  ToolsColorConverterIndexLazyRouteImport.update({
+    id: '/color-converter/',
+    path: '/color-converter/',
+    getParentRoute: () => ToolsRouteRoute,
+  } as any).lazy(() =>
+    import('./../pages/_tools/color-converter/index.lazy').then((d) => d.Route),
+  )
+const ToolsBase64ImagePreviewIndexLazyRoute =
+  ToolsBase64ImagePreviewIndexLazyRouteImport.update({
     id: '/base64-image-preview/',
     path: '/base64-image-preview/',
-    getParentRoute: () => rootRouteImport,
+    getParentRoute: () => ToolsRouteRoute,
   } as any).lazy(() =>
-    import('./../pages/base64-image-preview/index.lazy').then((d) => d.Route),
+    import('./../pages/_tools/base64-image-preview/index.lazy').then(
+      (d) => d.Route,
+    ),
   )
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/base64-image-preview': typeof Base64ImagePreviewIndexLazyRoute
-  '/color-converter': typeof ColorConverterIndexLazyRoute
-  '/csv-viewer': typeof CsvViewerIndexLazyRoute
-  '/image-converter': typeof ImageConverterIndexLazyRoute
-  '/image-to-base64': typeof ImageToBase64IndexLazyRoute
-  '/javascript-regex-test': typeof JavascriptRegexTestIndexLazyRoute
-  '/json-viewer': typeof JsonViewerIndexLazyRoute
-  '/jwt-decoder': typeof JwtDecoderIndexLazyRoute
-  '/markdown-viewer': typeof MarkdownViewerIndexLazyRoute
-  '/md5': typeof Md5IndexLazyRoute
-  '/mermaid-viewer': typeof MermaidViewerIndexLazyRoute
-  '/meta-generator': typeof MetaGeneratorIndexLazyRoute
-  '/minify-prettify': typeof MinifyPrettifyIndexLazyRoute
-  '/mock-data-generator': typeof MockDataGeneratorIndexLazyRoute
-  '/npm-script': typeof NpmScriptIndexLazyRoute
-  '/on-key-down': typeof OnKeyDownIndexLazyRoute
-  '/query-params-parser': typeof QueryParamsParserIndexLazyRoute
-  '/regex-library': typeof RegexLibraryIndexLazyRoute
   '/resume': typeof ResumeIndexLazyRoute
-  '/string-converter': typeof StringConverterIndexLazyRoute
-  '/text-diff-viewer': typeof TextDiffViewerIndexLazyRoute
-  '/text-generator': typeof TextGeneratorIndexLazyRoute
-  '/timestamp-to-date': typeof TimestampToDateIndexLazyRoute
-  '/url-encoder-decoder': typeof UrlEncoderDecoderIndexLazyRoute
-  '/word-counter': typeof WordCounterIndexLazyRoute
+  '/base64-image-preview': typeof ToolsBase64ImagePreviewIndexLazyRoute
+  '/color-converter': typeof ToolsColorConverterIndexLazyRoute
+  '/csv-viewer': typeof ToolsCsvViewerIndexLazyRoute
+  '/image-converter': typeof ToolsImageConverterIndexLazyRoute
+  '/image-to-base64': typeof ToolsImageToBase64IndexLazyRoute
+  '/javascript-regex-test': typeof ToolsJavascriptRegexTestIndexLazyRoute
+  '/json-viewer': typeof ToolsJsonViewerIndexLazyRoute
+  '/jwt-decoder': typeof ToolsJwtDecoderIndexLazyRoute
+  '/markdown-viewer': typeof ToolsMarkdownViewerIndexLazyRoute
+  '/md5': typeof ToolsMd5IndexLazyRoute
+  '/mermaid-viewer': typeof ToolsMermaidViewerIndexLazyRoute
+  '/meta-generator': typeof ToolsMetaGeneratorIndexLazyRoute
+  '/minify-prettify': typeof ToolsMinifyPrettifyIndexLazyRoute
+  '/mock-data-generator': typeof ToolsMockDataGeneratorIndexLazyRoute
+  '/npm-script': typeof ToolsNpmScriptIndexLazyRoute
+  '/on-key-down': typeof ToolsOnKeyDownIndexLazyRoute
+  '/query-params-parser': typeof ToolsQueryParamsParserIndexLazyRoute
+  '/regex-library': typeof ToolsRegexLibraryIndexLazyRoute
+  '/string-converter': typeof ToolsStringConverterIndexLazyRoute
+  '/text-diff-viewer': typeof ToolsTextDiffViewerIndexLazyRoute
+  '/text-generator': typeof ToolsTextGeneratorIndexLazyRoute
+  '/timestamp-to-date': typeof ToolsTimestampToDateIndexLazyRoute
+  '/url-encoder-decoder': typeof ToolsUrlEncoderDecoderIndexLazyRoute
+  '/word-counter': typeof ToolsWordCounterIndexLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/base64-image-preview': typeof Base64ImagePreviewIndexLazyRoute
-  '/color-converter': typeof ColorConverterIndexLazyRoute
-  '/csv-viewer': typeof CsvViewerIndexLazyRoute
-  '/image-converter': typeof ImageConverterIndexLazyRoute
-  '/image-to-base64': typeof ImageToBase64IndexLazyRoute
-  '/javascript-regex-test': typeof JavascriptRegexTestIndexLazyRoute
-  '/json-viewer': typeof JsonViewerIndexLazyRoute
-  '/jwt-decoder': typeof JwtDecoderIndexLazyRoute
-  '/markdown-viewer': typeof MarkdownViewerIndexLazyRoute
-  '/md5': typeof Md5IndexLazyRoute
-  '/mermaid-viewer': typeof MermaidViewerIndexLazyRoute
-  '/meta-generator': typeof MetaGeneratorIndexLazyRoute
-  '/minify-prettify': typeof MinifyPrettifyIndexLazyRoute
-  '/mock-data-generator': typeof MockDataGeneratorIndexLazyRoute
-  '/npm-script': typeof NpmScriptIndexLazyRoute
-  '/on-key-down': typeof OnKeyDownIndexLazyRoute
-  '/query-params-parser': typeof QueryParamsParserIndexLazyRoute
-  '/regex-library': typeof RegexLibraryIndexLazyRoute
   '/resume': typeof ResumeIndexLazyRoute
-  '/string-converter': typeof StringConverterIndexLazyRoute
-  '/text-diff-viewer': typeof TextDiffViewerIndexLazyRoute
-  '/text-generator': typeof TextGeneratorIndexLazyRoute
-  '/timestamp-to-date': typeof TimestampToDateIndexLazyRoute
-  '/url-encoder-decoder': typeof UrlEncoderDecoderIndexLazyRoute
-  '/word-counter': typeof WordCounterIndexLazyRoute
+  '/base64-image-preview': typeof ToolsBase64ImagePreviewIndexLazyRoute
+  '/color-converter': typeof ToolsColorConverterIndexLazyRoute
+  '/csv-viewer': typeof ToolsCsvViewerIndexLazyRoute
+  '/image-converter': typeof ToolsImageConverterIndexLazyRoute
+  '/image-to-base64': typeof ToolsImageToBase64IndexLazyRoute
+  '/javascript-regex-test': typeof ToolsJavascriptRegexTestIndexLazyRoute
+  '/json-viewer': typeof ToolsJsonViewerIndexLazyRoute
+  '/jwt-decoder': typeof ToolsJwtDecoderIndexLazyRoute
+  '/markdown-viewer': typeof ToolsMarkdownViewerIndexLazyRoute
+  '/md5': typeof ToolsMd5IndexLazyRoute
+  '/mermaid-viewer': typeof ToolsMermaidViewerIndexLazyRoute
+  '/meta-generator': typeof ToolsMetaGeneratorIndexLazyRoute
+  '/minify-prettify': typeof ToolsMinifyPrettifyIndexLazyRoute
+  '/mock-data-generator': typeof ToolsMockDataGeneratorIndexLazyRoute
+  '/npm-script': typeof ToolsNpmScriptIndexLazyRoute
+  '/on-key-down': typeof ToolsOnKeyDownIndexLazyRoute
+  '/query-params-parser': typeof ToolsQueryParamsParserIndexLazyRoute
+  '/regex-library': typeof ToolsRegexLibraryIndexLazyRoute
+  '/string-converter': typeof ToolsStringConverterIndexLazyRoute
+  '/text-diff-viewer': typeof ToolsTextDiffViewerIndexLazyRoute
+  '/text-generator': typeof ToolsTextGeneratorIndexLazyRoute
+  '/timestamp-to-date': typeof ToolsTimestampToDateIndexLazyRoute
+  '/url-encoder-decoder': typeof ToolsUrlEncoderDecoderIndexLazyRoute
+  '/word-counter': typeof ToolsWordCounterIndexLazyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/base64-image-preview/': typeof Base64ImagePreviewIndexLazyRoute
-  '/color-converter/': typeof ColorConverterIndexLazyRoute
-  '/csv-viewer/': typeof CsvViewerIndexLazyRoute
-  '/image-converter/': typeof ImageConverterIndexLazyRoute
-  '/image-to-base64/': typeof ImageToBase64IndexLazyRoute
-  '/javascript-regex-test/': typeof JavascriptRegexTestIndexLazyRoute
-  '/json-viewer/': typeof JsonViewerIndexLazyRoute
-  '/jwt-decoder/': typeof JwtDecoderIndexLazyRoute
-  '/markdown-viewer/': typeof MarkdownViewerIndexLazyRoute
-  '/md5/': typeof Md5IndexLazyRoute
-  '/mermaid-viewer/': typeof MermaidViewerIndexLazyRoute
-  '/meta-generator/': typeof MetaGeneratorIndexLazyRoute
-  '/minify-prettify/': typeof MinifyPrettifyIndexLazyRoute
-  '/mock-data-generator/': typeof MockDataGeneratorIndexLazyRoute
-  '/npm-script/': typeof NpmScriptIndexLazyRoute
-  '/on-key-down/': typeof OnKeyDownIndexLazyRoute
-  '/query-params-parser/': typeof QueryParamsParserIndexLazyRoute
-  '/regex-library/': typeof RegexLibraryIndexLazyRoute
+  '/_tools': typeof ToolsRouteRouteWithChildren
   '/resume/': typeof ResumeIndexLazyRoute
-  '/string-converter/': typeof StringConverterIndexLazyRoute
-  '/text-diff-viewer/': typeof TextDiffViewerIndexLazyRoute
-  '/text-generator/': typeof TextGeneratorIndexLazyRoute
-  '/timestamp-to-date/': typeof TimestampToDateIndexLazyRoute
-  '/url-encoder-decoder/': typeof UrlEncoderDecoderIndexLazyRoute
-  '/word-counter/': typeof WordCounterIndexLazyRoute
+  '/_tools/base64-image-preview/': typeof ToolsBase64ImagePreviewIndexLazyRoute
+  '/_tools/color-converter/': typeof ToolsColorConverterIndexLazyRoute
+  '/_tools/csv-viewer/': typeof ToolsCsvViewerIndexLazyRoute
+  '/_tools/image-converter/': typeof ToolsImageConverterIndexLazyRoute
+  '/_tools/image-to-base64/': typeof ToolsImageToBase64IndexLazyRoute
+  '/_tools/javascript-regex-test/': typeof ToolsJavascriptRegexTestIndexLazyRoute
+  '/_tools/json-viewer/': typeof ToolsJsonViewerIndexLazyRoute
+  '/_tools/jwt-decoder/': typeof ToolsJwtDecoderIndexLazyRoute
+  '/_tools/markdown-viewer/': typeof ToolsMarkdownViewerIndexLazyRoute
+  '/_tools/md5/': typeof ToolsMd5IndexLazyRoute
+  '/_tools/mermaid-viewer/': typeof ToolsMermaidViewerIndexLazyRoute
+  '/_tools/meta-generator/': typeof ToolsMetaGeneratorIndexLazyRoute
+  '/_tools/minify-prettify/': typeof ToolsMinifyPrettifyIndexLazyRoute
+  '/_tools/mock-data-generator/': typeof ToolsMockDataGeneratorIndexLazyRoute
+  '/_tools/npm-script/': typeof ToolsNpmScriptIndexLazyRoute
+  '/_tools/on-key-down/': typeof ToolsOnKeyDownIndexLazyRoute
+  '/_tools/query-params-parser/': typeof ToolsQueryParamsParserIndexLazyRoute
+  '/_tools/regex-library/': typeof ToolsRegexLibraryIndexLazyRoute
+  '/_tools/string-converter/': typeof ToolsStringConverterIndexLazyRoute
+  '/_tools/text-diff-viewer/': typeof ToolsTextDiffViewerIndexLazyRoute
+  '/_tools/text-generator/': typeof ToolsTextGeneratorIndexLazyRoute
+  '/_tools/timestamp-to-date/': typeof ToolsTimestampToDateIndexLazyRoute
+  '/_tools/url-encoder-decoder/': typeof ToolsUrlEncoderDecoderIndexLazyRoute
+  '/_tools/word-counter/': typeof ToolsWordCounterIndexLazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/resume'
     | '/base64-image-preview'
     | '/color-converter'
     | '/csv-viewer'
@@ -350,7 +416,6 @@ export interface FileRouteTypes {
     | '/on-key-down'
     | '/query-params-parser'
     | '/regex-library'
-    | '/resume'
     | '/string-converter'
     | '/text-diff-viewer'
     | '/text-generator'
@@ -360,6 +425,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/resume'
     | '/base64-image-preview'
     | '/color-converter'
     | '/csv-viewer'
@@ -378,7 +444,6 @@ export interface FileRouteTypes {
     | '/on-key-down'
     | '/query-params-parser'
     | '/regex-library'
-    | '/resume'
     | '/string-converter'
     | '/text-diff-viewer'
     | '/text-generator'
@@ -388,111 +453,54 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/base64-image-preview/'
-    | '/color-converter/'
-    | '/csv-viewer/'
-    | '/image-converter/'
-    | '/image-to-base64/'
-    | '/javascript-regex-test/'
-    | '/json-viewer/'
-    | '/jwt-decoder/'
-    | '/markdown-viewer/'
-    | '/md5/'
-    | '/mermaid-viewer/'
-    | '/meta-generator/'
-    | '/minify-prettify/'
-    | '/mock-data-generator/'
-    | '/npm-script/'
-    | '/on-key-down/'
-    | '/query-params-parser/'
-    | '/regex-library/'
+    | '/_tools'
     | '/resume/'
-    | '/string-converter/'
-    | '/text-diff-viewer/'
-    | '/text-generator/'
-    | '/timestamp-to-date/'
-    | '/url-encoder-decoder/'
-    | '/word-counter/'
+    | '/_tools/base64-image-preview/'
+    | '/_tools/color-converter/'
+    | '/_tools/csv-viewer/'
+    | '/_tools/image-converter/'
+    | '/_tools/image-to-base64/'
+    | '/_tools/javascript-regex-test/'
+    | '/_tools/json-viewer/'
+    | '/_tools/jwt-decoder/'
+    | '/_tools/markdown-viewer/'
+    | '/_tools/md5/'
+    | '/_tools/mermaid-viewer/'
+    | '/_tools/meta-generator/'
+    | '/_tools/minify-prettify/'
+    | '/_tools/mock-data-generator/'
+    | '/_tools/npm-script/'
+    | '/_tools/on-key-down/'
+    | '/_tools/query-params-parser/'
+    | '/_tools/regex-library/'
+    | '/_tools/string-converter/'
+    | '/_tools/text-diff-viewer/'
+    | '/_tools/text-generator/'
+    | '/_tools/timestamp-to-date/'
+    | '/_tools/url-encoder-decoder/'
+    | '/_tools/word-counter/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  Base64ImagePreviewIndexLazyRoute: typeof Base64ImagePreviewIndexLazyRoute
-  ColorConverterIndexLazyRoute: typeof ColorConverterIndexLazyRoute
-  CsvViewerIndexLazyRoute: typeof CsvViewerIndexLazyRoute
-  ImageConverterIndexLazyRoute: typeof ImageConverterIndexLazyRoute
-  ImageToBase64IndexLazyRoute: typeof ImageToBase64IndexLazyRoute
-  JavascriptRegexTestIndexLazyRoute: typeof JavascriptRegexTestIndexLazyRoute
-  JsonViewerIndexLazyRoute: typeof JsonViewerIndexLazyRoute
-  JwtDecoderIndexLazyRoute: typeof JwtDecoderIndexLazyRoute
-  MarkdownViewerIndexLazyRoute: typeof MarkdownViewerIndexLazyRoute
-  Md5IndexLazyRoute: typeof Md5IndexLazyRoute
-  MermaidViewerIndexLazyRoute: typeof MermaidViewerIndexLazyRoute
-  MetaGeneratorIndexLazyRoute: typeof MetaGeneratorIndexLazyRoute
-  MinifyPrettifyIndexLazyRoute: typeof MinifyPrettifyIndexLazyRoute
-  MockDataGeneratorIndexLazyRoute: typeof MockDataGeneratorIndexLazyRoute
-  NpmScriptIndexLazyRoute: typeof NpmScriptIndexLazyRoute
-  OnKeyDownIndexLazyRoute: typeof OnKeyDownIndexLazyRoute
-  QueryParamsParserIndexLazyRoute: typeof QueryParamsParserIndexLazyRoute
-  RegexLibraryIndexLazyRoute: typeof RegexLibraryIndexLazyRoute
+  ToolsRouteRoute: typeof ToolsRouteRouteWithChildren
   ResumeIndexLazyRoute: typeof ResumeIndexLazyRoute
-  StringConverterIndexLazyRoute: typeof StringConverterIndexLazyRoute
-  TextDiffViewerIndexLazyRoute: typeof TextDiffViewerIndexLazyRoute
-  TextGeneratorIndexLazyRoute: typeof TextGeneratorIndexLazyRoute
-  TimestampToDateIndexLazyRoute: typeof TimestampToDateIndexLazyRoute
-  UrlEncoderDecoderIndexLazyRoute: typeof UrlEncoderDecoderIndexLazyRoute
-  WordCounterIndexLazyRoute: typeof WordCounterIndexLazyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/_tools': {
+      id: '/_tools'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof ToolsRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/word-counter/': {
-      id: '/word-counter/'
-      path: '/word-counter'
-      fullPath: '/word-counter'
-      preLoaderRoute: typeof WordCounterIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/url-encoder-decoder/': {
-      id: '/url-encoder-decoder/'
-      path: '/url-encoder-decoder'
-      fullPath: '/url-encoder-decoder'
-      preLoaderRoute: typeof UrlEncoderDecoderIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/timestamp-to-date/': {
-      id: '/timestamp-to-date/'
-      path: '/timestamp-to-date'
-      fullPath: '/timestamp-to-date'
-      preLoaderRoute: typeof TimestampToDateIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/text-generator/': {
-      id: '/text-generator/'
-      path: '/text-generator'
-      fullPath: '/text-generator'
-      preLoaderRoute: typeof TextGeneratorIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/text-diff-viewer/': {
-      id: '/text-diff-viewer/'
-      path: '/text-diff-viewer'
-      fullPath: '/text-diff-viewer'
-      preLoaderRoute: typeof TextDiffViewerIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/string-converter/': {
-      id: '/string-converter/'
-      path: '/string-converter'
-      fullPath: '/string-converter'
-      preLoaderRoute: typeof StringConverterIndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/resume/': {
@@ -502,162 +510,240 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResumeIndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/regex-library/': {
-      id: '/regex-library/'
+    '/_tools/word-counter/': {
+      id: '/_tools/word-counter/'
+      path: '/word-counter'
+      fullPath: '/word-counter'
+      preLoaderRoute: typeof ToolsWordCounterIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
+    }
+    '/_tools/url-encoder-decoder/': {
+      id: '/_tools/url-encoder-decoder/'
+      path: '/url-encoder-decoder'
+      fullPath: '/url-encoder-decoder'
+      preLoaderRoute: typeof ToolsUrlEncoderDecoderIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
+    }
+    '/_tools/timestamp-to-date/': {
+      id: '/_tools/timestamp-to-date/'
+      path: '/timestamp-to-date'
+      fullPath: '/timestamp-to-date'
+      preLoaderRoute: typeof ToolsTimestampToDateIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
+    }
+    '/_tools/text-generator/': {
+      id: '/_tools/text-generator/'
+      path: '/text-generator'
+      fullPath: '/text-generator'
+      preLoaderRoute: typeof ToolsTextGeneratorIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
+    }
+    '/_tools/text-diff-viewer/': {
+      id: '/_tools/text-diff-viewer/'
+      path: '/text-diff-viewer'
+      fullPath: '/text-diff-viewer'
+      preLoaderRoute: typeof ToolsTextDiffViewerIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
+    }
+    '/_tools/string-converter/': {
+      id: '/_tools/string-converter/'
+      path: '/string-converter'
+      fullPath: '/string-converter'
+      preLoaderRoute: typeof ToolsStringConverterIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
+    }
+    '/_tools/regex-library/': {
+      id: '/_tools/regex-library/'
       path: '/regex-library'
       fullPath: '/regex-library'
-      preLoaderRoute: typeof RegexLibraryIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsRegexLibraryIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/query-params-parser/': {
-      id: '/query-params-parser/'
+    '/_tools/query-params-parser/': {
+      id: '/_tools/query-params-parser/'
       path: '/query-params-parser'
       fullPath: '/query-params-parser'
-      preLoaderRoute: typeof QueryParamsParserIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsQueryParamsParserIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/on-key-down/': {
-      id: '/on-key-down/'
+    '/_tools/on-key-down/': {
+      id: '/_tools/on-key-down/'
       path: '/on-key-down'
       fullPath: '/on-key-down'
-      preLoaderRoute: typeof OnKeyDownIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsOnKeyDownIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/npm-script/': {
-      id: '/npm-script/'
+    '/_tools/npm-script/': {
+      id: '/_tools/npm-script/'
       path: '/npm-script'
       fullPath: '/npm-script'
-      preLoaderRoute: typeof NpmScriptIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsNpmScriptIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/mock-data-generator/': {
-      id: '/mock-data-generator/'
+    '/_tools/mock-data-generator/': {
+      id: '/_tools/mock-data-generator/'
       path: '/mock-data-generator'
       fullPath: '/mock-data-generator'
-      preLoaderRoute: typeof MockDataGeneratorIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsMockDataGeneratorIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/minify-prettify/': {
-      id: '/minify-prettify/'
+    '/_tools/minify-prettify/': {
+      id: '/_tools/minify-prettify/'
       path: '/minify-prettify'
       fullPath: '/minify-prettify'
-      preLoaderRoute: typeof MinifyPrettifyIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsMinifyPrettifyIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/meta-generator/': {
-      id: '/meta-generator/'
+    '/_tools/meta-generator/': {
+      id: '/_tools/meta-generator/'
       path: '/meta-generator'
       fullPath: '/meta-generator'
-      preLoaderRoute: typeof MetaGeneratorIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsMetaGeneratorIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/mermaid-viewer/': {
-      id: '/mermaid-viewer/'
+    '/_tools/mermaid-viewer/': {
+      id: '/_tools/mermaid-viewer/'
       path: '/mermaid-viewer'
       fullPath: '/mermaid-viewer'
-      preLoaderRoute: typeof MermaidViewerIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsMermaidViewerIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/md5/': {
-      id: '/md5/'
+    '/_tools/md5/': {
+      id: '/_tools/md5/'
       path: '/md5'
       fullPath: '/md5'
-      preLoaderRoute: typeof Md5IndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsMd5IndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/markdown-viewer/': {
-      id: '/markdown-viewer/'
+    '/_tools/markdown-viewer/': {
+      id: '/_tools/markdown-viewer/'
       path: '/markdown-viewer'
       fullPath: '/markdown-viewer'
-      preLoaderRoute: typeof MarkdownViewerIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsMarkdownViewerIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/jwt-decoder/': {
-      id: '/jwt-decoder/'
+    '/_tools/jwt-decoder/': {
+      id: '/_tools/jwt-decoder/'
       path: '/jwt-decoder'
       fullPath: '/jwt-decoder'
-      preLoaderRoute: typeof JwtDecoderIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsJwtDecoderIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/json-viewer/': {
-      id: '/json-viewer/'
+    '/_tools/json-viewer/': {
+      id: '/_tools/json-viewer/'
       path: '/json-viewer'
       fullPath: '/json-viewer'
-      preLoaderRoute: typeof JsonViewerIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsJsonViewerIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/javascript-regex-test/': {
-      id: '/javascript-regex-test/'
+    '/_tools/javascript-regex-test/': {
+      id: '/_tools/javascript-regex-test/'
       path: '/javascript-regex-test'
       fullPath: '/javascript-regex-test'
-      preLoaderRoute: typeof JavascriptRegexTestIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsJavascriptRegexTestIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/image-to-base64/': {
-      id: '/image-to-base64/'
+    '/_tools/image-to-base64/': {
+      id: '/_tools/image-to-base64/'
       path: '/image-to-base64'
       fullPath: '/image-to-base64'
-      preLoaderRoute: typeof ImageToBase64IndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsImageToBase64IndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/image-converter/': {
-      id: '/image-converter/'
+    '/_tools/image-converter/': {
+      id: '/_tools/image-converter/'
       path: '/image-converter'
       fullPath: '/image-converter'
-      preLoaderRoute: typeof ImageConverterIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsImageConverterIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/csv-viewer/': {
-      id: '/csv-viewer/'
+    '/_tools/csv-viewer/': {
+      id: '/_tools/csv-viewer/'
       path: '/csv-viewer'
       fullPath: '/csv-viewer'
-      preLoaderRoute: typeof CsvViewerIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsCsvViewerIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/color-converter/': {
-      id: '/color-converter/'
+    '/_tools/color-converter/': {
+      id: '/_tools/color-converter/'
       path: '/color-converter'
       fullPath: '/color-converter'
-      preLoaderRoute: typeof ColorConverterIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsColorConverterIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
-    '/base64-image-preview/': {
-      id: '/base64-image-preview/'
+    '/_tools/base64-image-preview/': {
+      id: '/_tools/base64-image-preview/'
       path: '/base64-image-preview'
       fullPath: '/base64-image-preview'
-      preLoaderRoute: typeof Base64ImagePreviewIndexLazyRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof ToolsBase64ImagePreviewIndexLazyRouteImport
+      parentRoute: typeof ToolsRouteRoute
     }
   }
 }
 
+interface ToolsRouteRouteChildren {
+  ToolsBase64ImagePreviewIndexLazyRoute: typeof ToolsBase64ImagePreviewIndexLazyRoute
+  ToolsColorConverterIndexLazyRoute: typeof ToolsColorConverterIndexLazyRoute
+  ToolsCsvViewerIndexLazyRoute: typeof ToolsCsvViewerIndexLazyRoute
+  ToolsImageConverterIndexLazyRoute: typeof ToolsImageConverterIndexLazyRoute
+  ToolsImageToBase64IndexLazyRoute: typeof ToolsImageToBase64IndexLazyRoute
+  ToolsJavascriptRegexTestIndexLazyRoute: typeof ToolsJavascriptRegexTestIndexLazyRoute
+  ToolsJsonViewerIndexLazyRoute: typeof ToolsJsonViewerIndexLazyRoute
+  ToolsJwtDecoderIndexLazyRoute: typeof ToolsJwtDecoderIndexLazyRoute
+  ToolsMarkdownViewerIndexLazyRoute: typeof ToolsMarkdownViewerIndexLazyRoute
+  ToolsMd5IndexLazyRoute: typeof ToolsMd5IndexLazyRoute
+  ToolsMermaidViewerIndexLazyRoute: typeof ToolsMermaidViewerIndexLazyRoute
+  ToolsMetaGeneratorIndexLazyRoute: typeof ToolsMetaGeneratorIndexLazyRoute
+  ToolsMinifyPrettifyIndexLazyRoute: typeof ToolsMinifyPrettifyIndexLazyRoute
+  ToolsMockDataGeneratorIndexLazyRoute: typeof ToolsMockDataGeneratorIndexLazyRoute
+  ToolsNpmScriptIndexLazyRoute: typeof ToolsNpmScriptIndexLazyRoute
+  ToolsOnKeyDownIndexLazyRoute: typeof ToolsOnKeyDownIndexLazyRoute
+  ToolsQueryParamsParserIndexLazyRoute: typeof ToolsQueryParamsParserIndexLazyRoute
+  ToolsRegexLibraryIndexLazyRoute: typeof ToolsRegexLibraryIndexLazyRoute
+  ToolsStringConverterIndexLazyRoute: typeof ToolsStringConverterIndexLazyRoute
+  ToolsTextDiffViewerIndexLazyRoute: typeof ToolsTextDiffViewerIndexLazyRoute
+  ToolsTextGeneratorIndexLazyRoute: typeof ToolsTextGeneratorIndexLazyRoute
+  ToolsTimestampToDateIndexLazyRoute: typeof ToolsTimestampToDateIndexLazyRoute
+  ToolsUrlEncoderDecoderIndexLazyRoute: typeof ToolsUrlEncoderDecoderIndexLazyRoute
+  ToolsWordCounterIndexLazyRoute: typeof ToolsWordCounterIndexLazyRoute
+}
+
+const ToolsRouteRouteChildren: ToolsRouteRouteChildren = {
+  ToolsBase64ImagePreviewIndexLazyRoute: ToolsBase64ImagePreviewIndexLazyRoute,
+  ToolsColorConverterIndexLazyRoute: ToolsColorConverterIndexLazyRoute,
+  ToolsCsvViewerIndexLazyRoute: ToolsCsvViewerIndexLazyRoute,
+  ToolsImageConverterIndexLazyRoute: ToolsImageConverterIndexLazyRoute,
+  ToolsImageToBase64IndexLazyRoute: ToolsImageToBase64IndexLazyRoute,
+  ToolsJavascriptRegexTestIndexLazyRoute:
+    ToolsJavascriptRegexTestIndexLazyRoute,
+  ToolsJsonViewerIndexLazyRoute: ToolsJsonViewerIndexLazyRoute,
+  ToolsJwtDecoderIndexLazyRoute: ToolsJwtDecoderIndexLazyRoute,
+  ToolsMarkdownViewerIndexLazyRoute: ToolsMarkdownViewerIndexLazyRoute,
+  ToolsMd5IndexLazyRoute: ToolsMd5IndexLazyRoute,
+  ToolsMermaidViewerIndexLazyRoute: ToolsMermaidViewerIndexLazyRoute,
+  ToolsMetaGeneratorIndexLazyRoute: ToolsMetaGeneratorIndexLazyRoute,
+  ToolsMinifyPrettifyIndexLazyRoute: ToolsMinifyPrettifyIndexLazyRoute,
+  ToolsMockDataGeneratorIndexLazyRoute: ToolsMockDataGeneratorIndexLazyRoute,
+  ToolsNpmScriptIndexLazyRoute: ToolsNpmScriptIndexLazyRoute,
+  ToolsOnKeyDownIndexLazyRoute: ToolsOnKeyDownIndexLazyRoute,
+  ToolsQueryParamsParserIndexLazyRoute: ToolsQueryParamsParserIndexLazyRoute,
+  ToolsRegexLibraryIndexLazyRoute: ToolsRegexLibraryIndexLazyRoute,
+  ToolsStringConverterIndexLazyRoute: ToolsStringConverterIndexLazyRoute,
+  ToolsTextDiffViewerIndexLazyRoute: ToolsTextDiffViewerIndexLazyRoute,
+  ToolsTextGeneratorIndexLazyRoute: ToolsTextGeneratorIndexLazyRoute,
+  ToolsTimestampToDateIndexLazyRoute: ToolsTimestampToDateIndexLazyRoute,
+  ToolsUrlEncoderDecoderIndexLazyRoute: ToolsUrlEncoderDecoderIndexLazyRoute,
+  ToolsWordCounterIndexLazyRoute: ToolsWordCounterIndexLazyRoute,
+}
+
+const ToolsRouteRouteWithChildren = ToolsRouteRoute._addFileChildren(
+  ToolsRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  Base64ImagePreviewIndexLazyRoute: Base64ImagePreviewIndexLazyRoute,
-  ColorConverterIndexLazyRoute: ColorConverterIndexLazyRoute,
-  CsvViewerIndexLazyRoute: CsvViewerIndexLazyRoute,
-  ImageConverterIndexLazyRoute: ImageConverterIndexLazyRoute,
-  ImageToBase64IndexLazyRoute: ImageToBase64IndexLazyRoute,
-  JavascriptRegexTestIndexLazyRoute: JavascriptRegexTestIndexLazyRoute,
-  JsonViewerIndexLazyRoute: JsonViewerIndexLazyRoute,
-  JwtDecoderIndexLazyRoute: JwtDecoderIndexLazyRoute,
-  MarkdownViewerIndexLazyRoute: MarkdownViewerIndexLazyRoute,
-  Md5IndexLazyRoute: Md5IndexLazyRoute,
-  MermaidViewerIndexLazyRoute: MermaidViewerIndexLazyRoute,
-  MetaGeneratorIndexLazyRoute: MetaGeneratorIndexLazyRoute,
-  MinifyPrettifyIndexLazyRoute: MinifyPrettifyIndexLazyRoute,
-  MockDataGeneratorIndexLazyRoute: MockDataGeneratorIndexLazyRoute,
-  NpmScriptIndexLazyRoute: NpmScriptIndexLazyRoute,
-  OnKeyDownIndexLazyRoute: OnKeyDownIndexLazyRoute,
-  QueryParamsParserIndexLazyRoute: QueryParamsParserIndexLazyRoute,
-  RegexLibraryIndexLazyRoute: RegexLibraryIndexLazyRoute,
+  ToolsRouteRoute: ToolsRouteRouteWithChildren,
   ResumeIndexLazyRoute: ResumeIndexLazyRoute,
-  StringConverterIndexLazyRoute: StringConverterIndexLazyRoute,
-  TextDiffViewerIndexLazyRoute: TextDiffViewerIndexLazyRoute,
-  TextGeneratorIndexLazyRoute: TextGeneratorIndexLazyRoute,
-  TimestampToDateIndexLazyRoute: TimestampToDateIndexLazyRoute,
-  UrlEncoderDecoderIndexLazyRoute: UrlEncoderDecoderIndexLazyRoute,
-  WordCounterIndexLazyRoute: WordCounterIndexLazyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { Link } from '@tanstack/react-router';
-import { useState, useRef, useEffect } from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 
+import { AppShell } from '../components/AppShell';
 import type { FileRouteTypes } from '../router/routeTree.gen';
 
 export const Route = createFileRoute('/')({
@@ -10,59 +9,48 @@ export const Route = createFileRoute('/')({
 });
 
 function RouteComponent() {
-  const [showQR, setShowQR] = useState(false);
-  const qrRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      const target = e.target as Node | null;
-      if (qrRef.current && target && !qrRef.current.contains(target)) {
-        setShowQR(false);
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
   const items: { name: string; path: FileRouteTypes['to']; icon: string }[] = [
-    { name: 'My Resume', path: '/resume', icon: '📄' },
-    { name: 'Text Generator', path: '/text-generator', icon: '🎲' },
-    { name: 'Mock Data Generator', path: '/mock-data-generator', icon: '🧪' },
-    { name: 'Meta Generator', path: '/meta-generator', icon: '🏷️' },
-    { name: 'NPM Script Generator', path: '/npm-script', icon: '📦' },
-    { name: 'Word Counter', path: '/word-counter', icon: '📊' },
-    { name: 'On Key Down', path: '/on-key-down', icon: '⌨️' },
-    { name: 'JavaScript Regex Test', path: '/javascript-regex-test', icon: '🔍' },
-    { name: 'Regex Library', path: '/regex-library', icon: '🧩' },
-    { name: 'Minify / Prettify Tool', path: '/minify-prettify', icon: '🧽' },
-    { name: 'Timestamp to Date', path: '/timestamp-to-date', icon: '🕒' },
-    { name: 'String Converter', path: '/string-converter', icon: '🔤' },
-    { name: 'JSON Viewer', path: '/json-viewer', icon: '📋' },
-    { name: 'Markdown Viewer', path: '/markdown-viewer', icon: '📝' },
-    { name: 'Mermaid Viewer', path: '/mermaid-viewer', icon: '📈' },
-    { name: 'CSV Viewer', path: '/csv-viewer', icon: '🖥️' },
-    { name: 'JWT Decoder', path: '/jwt-decoder', icon: '🔐' },
-    { name: 'MD5', path: '/md5', icon: '🔐' },
-    { name: 'Text Diff Viewer', path: '/text-diff-viewer', icon: '🔄' },
-    { name: 'Color Converter', path: '/color-converter', icon: '🎨' },
-    { name: 'Image Converter', path: '/image-converter', icon: '🖼️' },
-    { name: 'Image → Base64', path: '/image-to-base64', icon: '🌁' },
-    { name: 'Base64 Image Preview', path: '/base64-image-preview', icon: '🌄' },
-    { name: 'URL Encoder/Decoder', path: '/url-encoder-decoder', icon: '🔗' },
-    { name: 'Query Params Parser', path: '/query-params-parser', icon: '⚓️' },
+    { name: 'My Resume', path: '/resume', icon: 'bi-file-person' },
+    { name: 'Text Generator', path: '/text-generator', icon: 'bi-shuffle' },
+    { name: 'Mock Data Generator', path: '/mock-data-generator', icon: 'bi-database-fill-gear' },
+    { name: 'Meta Generator', path: '/meta-generator', icon: 'bi-tags' },
+    { name: 'NPM Script Generator', path: '/npm-script', icon: 'bi-box-seam' },
+    { name: 'Word Counter', path: '/word-counter', icon: 'bi-bar-chart-line' },
+    { name: 'On Key Down', path: '/on-key-down', icon: 'bi-keyboard' },
+    { name: 'JavaScript Regex Test', path: '/javascript-regex-test', icon: 'bi-search' },
+    { name: 'Regex Library', path: '/regex-library', icon: 'bi-puzzle' },
+    { name: 'Minify / Prettify Tool', path: '/minify-prettify', icon: 'bi-code-slash' },
+    { name: 'Timestamp to Date', path: '/timestamp-to-date', icon: 'bi-clock' },
+    { name: 'String Converter', path: '/string-converter', icon: 'bi-fonts' },
+    { name: 'JSON Viewer', path: '/json-viewer', icon: 'bi-braces' },
+    { name: 'Markdown Viewer', path: '/markdown-viewer', icon: 'bi-markdown' },
+    { name: 'Mermaid Viewer', path: '/mermaid-viewer', icon: 'bi-diagram-3' },
+    { name: 'CSV Viewer', path: '/csv-viewer', icon: 'bi-table' },
+    { name: 'JWT Decoder', path: '/jwt-decoder', icon: 'bi-shield-lock' },
+    { name: 'MD5', path: '/md5', icon: 'bi-lock' },
+    { name: 'Text Diff Viewer', path: '/text-diff-viewer', icon: 'bi-file-diff' },
+    { name: 'Color Converter', path: '/color-converter', icon: 'bi-palette' },
+    { name: 'Image Converter', path: '/image-converter', icon: 'bi-image' },
+    { name: 'Image → Base64', path: '/image-to-base64', icon: 'bi-image-fill' },
+    { name: 'Base64 Image Preview', path: '/base64-image-preview', icon: 'bi-eye' },
+    { name: 'URL Encoder/Decoder', path: '/url-encoder-decoder', icon: 'bi-link-45deg' },
+    { name: 'Query Params Parser', path: '/query-params-parser', icon: 'bi-question-circle' },
   ];
 
   return (
-    <>
-      <Container fluid='xl' className='py-8'>
-        <h1 className='my-4 text-center display-4 fw-bold'>Nguyen Manh Thang</h1>
-        <p className='my-4 text-center lead'>
-          Welcome back! This is the home page of my application
-        </p>
+    <AppShell>
+      <Container fluid='xl' className='py-5'>
+        <div className='hero-gradient rounded-3 text-center py-5 px-3 mb-5'>
+          <h1 className='display-4 fw-bold mb-2'>DevTools by ngmthaq</h1>
+          <p className='lead text-muted mb-0'>
+            25+ free developer utilities — no signup, no tracking, runs entirely in your browser.
+          </p>
+        </div>
+
         <Row>
           {items.map((item, index) => (
             <Col key={index} xs={12} sm={6} md={4} lg={3} className='mb-4'>
-              <Card className='h-100 shadow-sm'>
+              <Card className='tool-card h-100 shadow-sm border-0 rounded-3'>
                 {item.path === '/resume' ? (
                   <a
                     href={'/#' + item.path}
@@ -70,16 +58,16 @@ function RouteComponent() {
                     rel='noopener noreferrer'
                     className='text-decoration-none h-100 d-flex flex-column align-items-center justify-content-center p-4 text-dark'
                   >
-                    <div className='mb-2 display-6'>{item.icon}</div>
-                    <div className='text-center'>{item.name}</div>
+                    <i className={`bi ${item.icon} fs-1 text-primary mb-3`} />
+                    <span className='text-center fw-medium'>{item.name}</span>
                   </a>
                 ) : (
                   <Link
                     to={item.path}
                     className='text-decoration-none h-100 d-flex flex-column align-items-center justify-content-center p-4 text-dark'
                   >
-                    <div className='mb-2 display-6'>{item.icon}</div>
-                    <div className='text-center'>{item.name}</div>
+                    <i className={`bi ${item.icon} fs-1 text-primary mb-3`} />
+                    <span className='text-center fw-medium'>{item.name}</span>
                   </Link>
                 )}
               </Card>
@@ -87,52 +75,6 @@ function RouteComponent() {
           ))}
         </Row>
       </Container>
-
-      <footer className='text-center py-3 mt-4'>
-        <Container>
-          <div className='d-flex flex-column align-items-center'>
-            <small className='text-muted mb-2'>
-              If you find this project useful, consider supporting me —
-            </small>
-
-            <div style={{ position: 'relative', display: 'inline-block' }} ref={qrRef}>
-              <button
-                type='button'
-                className='btn btn-outline-secondary'
-                onClick={() => setShowQR(s => !s)}
-                aria-expanded={showQR}
-                aria-controls='donate-qr'
-              >
-                Donate
-              </button>
-
-              {showQR && (
-                <div
-                  id='donate-qr'
-                  role='dialog'
-                  aria-label='Donate QR code'
-                  style={{
-                    position: 'absolute',
-                    bottom: 'calc(100% + 8px)',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    padding: 0,
-                    background: 'white',
-                    borderRadius: 8,
-                    boxShadow: '0 6px 18px rgba(0,0,0,0.12)',
-                    overflow: 'hidden',
-                    zIndex: 1000,
-                    width: 200,
-                    height: 'auto',
-                  }}
-                >
-                  <img src='/qr-code.png' alt='Donate QR code' className='img-fluid' />
-                </div>
-              )}
-            </div>
-          </div>
-        </Container>
-      </footer>
-    </>
+    </AppShell>
   );
 }

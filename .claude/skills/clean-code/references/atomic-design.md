@@ -22,11 +22,11 @@ Small groups of atoms functioning as a unit. Single clear purpose, minimal inter
 
 ```javascript
 function SearchField({ onSearch }) {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   return (
     <div>
       <Input value={query} onChange={setQuery} />
-      <Button label="Search" onClick={() => onSearch(query)} />
+      <Button label='Search' onClick={() => onSearch(query)} />
     </div>
   );
 }
@@ -56,9 +56,9 @@ Page-level layout structures. Accept content via props/slots — no real data, n
 ```javascript
 function DashboardTemplate({ sidebar, header, mainContent, footer }) {
   return (
-    <div className="dashboard-layout">
-      <div className="sidebar">{sidebar}</div>
-      <div className="main">
+    <div className='dashboard-layout'>
+      <div className='sidebar'>{sidebar}</div>
+      <div className='main'>
         {header}
         {mainContent}
         {footer}

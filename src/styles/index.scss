@@ -1,3 +1,44 @@
 .cursor-pointer {
   cursor: pointer;
 }
+
+// Smooth font rendering
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Hover animation for tool cards
+.tool-card {
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+  &:hover {
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12) !important;
+    transform: translateY(-2px);
+  }
+}
+
+// Hero section gradient background
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(11, 92, 255, 0.06) 0%, transparent 60%);
+}
+
+// Styled code output blocks (replaces inline-styled <pre> elements)
+.code-output {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.85rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+// Navbar brand typography
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
